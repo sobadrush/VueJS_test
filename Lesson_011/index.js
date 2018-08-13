@@ -8,9 +8,9 @@ var $myApp = new Vue({
     },
     methods: {
         doClick: function (e) {
-            console.log('e.target >>> ' , e.target);
+            console.log('e.target >>> ', e.target);
             console.log('this.isActive >>> ', this.isActive);
             this.isActive = !this.isActive;
-        },
+        }
     }
 });

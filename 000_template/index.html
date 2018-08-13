@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lesson XX</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="/assest/js/vue.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-2" style="background-color: red">
+                111
+            </div>
+            <div class="col-8" style="background-color: green">
+                222
+            </div>
+            <div class="col-2" style="background-color: blue">
+                333
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="myApp">
+        <div class="row">
+            <div class="col-2">
+
+            </div>
+            <div class="col-8">
+                <h1 style="color:blue;">Lesson XX</h1>
+                <button type="button" class="btn btn-primary" @click="doClick">doClick</button>
+            </div>
+            <div class="col-2">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var $myApp = new Vue({
+            el: '#myApp',
+            data: {
+                isActive: true
+            },
+            methods: {
+                doClick: function () {
+                    alert('Fuck You!');
+                },
+            }
+        });
+    </script>
+
+</body>
+
+</html>

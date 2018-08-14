@@ -10,133 +10,13 @@
 
     <div class="layout-container">
       <!-- top navbar-->
-      <header class="header-container">
-        <nav>
-          <ul class="visible-xs visible-sm">
-            <li><a id="sidebar-toggler" href="#" class="menu-link menu-link-slide"><span><em></em></span></a></li>
-          </ul>
-          <ul class="hidden-xs">
-            <li><a id="offcanvas-toggler" href="#" class="menu-link menu-link-slide"><span><em></em></span></a></li>
-          </ul>
-          <h2 class="header-title">Cards</h2>
-          <ul class="pull-right">
-            <li><a id="header-search" href="#" class="ripple"><em class="ion-ios-search-strong"></em></a></li>
-            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle has-badge ripple"><em class="ion-person"></em><sup class="badge bg-danger">3</sup></a>
-              <ul class="dropdown-menu dropdown-menu-right md-dropdown-menu">
-                <li><a href="profile.html"><em class="ion-home icon-fw"></em>Profile</a></li>
-                <li><a href="messages.html"><em class="ion-gear-a icon-fw"></em>Messages</a></li>
-                <li role="presentation" class="divider"></li>
-                <li><a href="user.login.html"><em class="ion-log-out icon-fw"></em>Logout</a></li>
-              </ul>
-            </li>
-            <li><a id="header-settings" href="#" class="ripple"><em class="ion-gear-b"></em></a></li>
-          </ul>
-        </nav>
-      </header>
+
+      <app-header></app-header>
+
       <!-- sidebar-->
-      <aside class="sidebar-container">
-        <div class="sidebar-header">
-          <div class="pull-right pt-lg text-muted hidden"><em class="ion-close-round"></em></div><a href="#" class="sidebar-header-logo"><img src="../static/assets/img/logo.png" data-svg-replace="assets/img/logo.svg" alt="Logo"><span class="sidebar-header-logo-text">Centric</span></a>
-        </div>
-        <div class="sidebar-content">
-          <div class="sidebar-toolbar text-center"><a href=""><img src="../static/assets/img/user/01.jpg" alt="Profile" class="img-circle thumb64"></a>
-            <div class="mt">Welcome, Willie Webb</div>
-          </div>
-          <nav class="sidebar-nav">
-            <ul>
-              <li><a href="dashboard.html" class="ripple"><span class="pull-right nav-label"><span class="badge bg-success">2</span></span><span class="nav-icon"><img src="" data-svg-replace="assets/img/icons/aperture.svg" alt="MenuItem" class="hidden"></span><span>Dashboard</span></a></li>
-              <li><a href="cards.html" class="ripple"><span class="pull-right nav-label"></span><span class="nav-icon"><img src="" data-svg-replace="assets/img/icons/radio-waves.svg" alt="MenuItem" class="hidden"></span><span>Cards</span></a></li>
-              <li><a href="#" class="ripple"><span class="pull-right nav-caret"><em class="ion-ios-arrow-right"></em></span><span class="pull-right nav-label"></span><span class="nav-icon"><img src="" data-svg-replace="assets/img/icons/connection-bars.svg" alt="MenuItem" class="hidden"></span><span>Charts</span></a>
-                <ul class="sidebar-subnav">
-                  <li><a href="flot.html" class="ripple"><span class="pull-right nav-label"></span><span>Flot</span></a></li>
-                  <li><a href="radial.html" class="ripple"><span class="pull-right nav-label"></span><span>Radial</span></a></li>
-                  <li><a href="rickshaw.html" class="ripple"><span class="pull-right nav-label"></span><span>Rickshaw</span></a></li>
-                </ul>
-              </li>
-              <li><a href="#" class="ripple"><span class="pull-right nav-caret"><em class="ion-ios-arrow-right"></em></span><span class="pull-right nav-label"></span><span class="nav-icon"><img src="" data-svg-replace="assets/img/icons/clipboard.svg" alt="MenuItem" class="hidden"></span><span>Forms</span></a>
-                <ul class="sidebar-subnav">
-                  <li><a href="forms.classic.html" class="ripple"><span class="pull-right nav-label"></span><span>Classic</span></a></li>
-                  <li><a href="validation.html" class="ripple"><span class="pull-right nav-label"></span><span>Validation</span></a></li>
-                  <li><a href="forms.advanced.html" class="ripple"><span class="pull-right nav-label"></span><span>Advanced</span></a></li>
-                  <li><a href="material.html" class="ripple"><span class="pull-right nav-label"></span><span>Material</span></a></li>
-                  <li><a href="editor.html" class="ripple"><span class="pull-right nav-label"></span><span>Editors</span></a></li>
-                  <li><a href="dropzone.html" class="ripple"><span class="pull-right nav-label"></span><span>Dropzone</span></a></li>
-                  <li><a href="xeditable.html" class="ripple"><span class="pull-right nav-label"></span><span>xEditable</span></a></li>
-                  <li><a href="wizard.html" class="ripple"><span class="pull-right nav-label"></span><span>Wizard</span></a></li>
-                </ul>
-              </li>
-              <li><a href="#" class="ripple"><span class="pull-right nav-caret"><em class="ion-ios-arrow-right"></em></span><span class="pull-right nav-label"></span><span class="nav-icon"><img src="" data-svg-replace="assets/img/icons/navicon.svg" alt="MenuItem" class="hidden"></span><span>Tables</span></a>
-                <ul id="tables" class="sidebar-subnav">
-                  <li><a href="tables.classic.html" class="ripple"><span class="pull-right nav-label"></span><span>Classic</span></a></li>
-                  <li><a href="datatable.html" class="ripple"><span class="pull-right nav-label"></span><span>Datatable</span></a></li>
-                  <li><a href="bootgrid.html" class="ripple"><span class="pull-right nav-label"></span><span>Bootgrid</span></a></li>
-                </ul>
-              </li>
-              <li><a href="#" class="ripple"><span class="pull-right nav-caret"><em class="ion-ios-arrow-right"></em></span><span class="pull-right nav-label"></span><span class="nav-icon"><img src="" data-svg-replace="assets/img/icons/grid.svg" alt="MenuItem" class="hidden"></span><span>Layouts</span></a>
-                <ul id="layouts" class="sidebar-subnav">
-                  <li><a href="layouts.columns.html" class="ripple"><span class="pull-right nav-label"></span><span>Columns</span></a></li>
-                  <li><a href="layouts.overlap.html" class="ripple"><span class="pull-right nav-label"></span><span>Overlap</span></a></li>
-                  <li><a href="layouts.boxed.html" class="ripple"><span class="pull-right nav-label"></span><span>Boxed</span></a></li>
-                  <li><a href="layouts.tabs.html" class="ripple"><span class="pull-right nav-label"></span><span>Tabs</span></a></li>
-                  <li><a href="layouts.containers.html" class="ripple"><span class="pull-right nav-label"></span><span>Containers</span></a></li>
-                </ul>
-              </li>
-              <li><a href="#" class="ripple"><span class="pull-right nav-caret"><em class="ion-ios-arrow-right"></em></span><span class="pull-right nav-label"></span><span class="nav-icon"><img src="" data-svg-replace="assets/img/icons/levels.svg" alt="MenuItem" class="hidden"></span><span>Elements</span></a>
-                <ul id="elements" class="sidebar-subnav">
-                  <li><a href="colors.html" class="ripple"><span class="pull-right nav-label"></span><span>Colors</span></a></li>
-                  <li><a href="whiteframes.html" class="ripple"><span class="pull-right nav-label"></span><span>Whiteframes</span></a></li>
-                  <li><a href="lists.html" class="ripple"><span class="pull-right nav-label"></span><span>Lists</span></a></li>
-                  <li><a href="bootstrapui.html" class="ripple"><span class="pull-right nav-label"></span><span>Bootstrap</span></a></li>
-                  <li><a href="buttons.html" class="ripple"><span class="pull-right nav-label"></span><span>Buttons</span></a></li>
-                  <li><a href="sweetalert.html"><span class="pull-right nav-label"></span><span>Sweet-alert</span></a></li>
-                  <li><a href="spinners.html" class="ripple"><span class="pull-right nav-label"></span><span>Spinners</span></a></li>
-                  <li><a href="nestable.html" class="ripple"><span class="pull-right nav-label"></span><span>Nestable</span></a></li>
-                  <li><a href="grid.html" class="ripple"><span class="pull-right nav-label"></span><span>Grid</span></a></li>
-                  <li><a href="grid-masonry.html" class="ripple"><span class="pull-right nav-label"></span><span>Grid Masonry</span></a></li>
-                  <li><a href="typography.html" class="ripple"><span class="pull-right nav-label"></span><span>Typography</span></a></li>
-                  <li><a href="icons.html" class="ripple"><span class="pull-right nav-label"></span><span>Icons</span></a></li>
-                  <li><a href="utilities.html" class="ripple"><span class="pull-right nav-label"></span><span>Utilities</span></a></li>
-                </ul>
-              </li>
-              <li><a href="#" class="ripple"><span class="pull-right nav-caret"><em class="ion-ios-arrow-right"></em></span><span class="pull-right nav-label"></span><span class="nav-icon"><img src="" data-svg-replace="assets/img/icons/planet.svg" alt="MenuItem" class="hidden"></span><span>Maps</span></a>
-                <ul id="maps" class="sidebar-subnav">
-                  <li><a href="google-map-full.html" class="ripple"><span class="pull-right nav-label"></span><span>Google Maps Full</span></a></li>
-                  <li><a href="google-map.html" class="ripple"><span class="pull-right nav-label"></span><span>Google Maps</span></a></li>
-                  <li><a href="vector-map.html" class="ripple"><span class="pull-right nav-label"></span><span>Vector Maps</span></a></li>
-                  <li><a href="datamaps.html" class="ripple"><span class="pull-right nav-label"></span><span>Datamaps</span></a></li>
-                </ul>
-              </li>
-              <li><a href="#" class="ripple"><span class="pull-right nav-caret"><em class="ion-ios-arrow-right"></em></span><span class="pull-right nav-label"></span><span class="nav-icon"><img src="" data-svg-replace="assets/img/icons/ios-browsers.svg" alt="MenuItem" class="hidden"></span><span>Pages</span></a>
-                <ul id="pages" class="sidebar-subnav">
-                  <li><a href="timeline.html" class="ripple"><span class="pull-right nav-label"></span><span>Timeline</span></a></li>
-                  <li><a href="invoice.html" class="ripple"><span class="pull-right nav-label"></span><span>Invoice</span></a></li>
-                  <li><a href="pricing.html" class="ripple"><span class="pull-right nav-label"></span><span>Pricing</span></a></li>
-                  <li><a href="contacts.html" class="ripple"><span class="pull-right nav-label"></span><span>Contacts</span></a></li>
-                  <li><a href="faq.html" class="ripple"><span class="pull-right nav-label"></span><span>FAQ</span></a></li>
-                  <li><a href="projects.html" class="ripple"><span class="pull-right nav-label"></span><span>Projects</span></a></li>
-                  <li><a href="blog.html" class="ripple"><span class="pull-right nav-label"></span><span>Blog</span></a></li>
-                  <li><a href="blog.article.html" class="ripple"><span class="pull-right nav-label"></span><span>Article</span></a></li>
-                  <li><a href="profile.html" class="ripple"><span class="pull-right nav-label"></span><span>Profile</span></a></li>
-                  <li><a href="gallery.html" class="ripple"><span class="pull-right nav-label"></span><span>Gallery</span></a></li>
-                  <li><a href="wall.html" class="ripple"><span class="pull-right nav-label"></span><span>Wall</span></a></li>
-                  <li><a href="search.html" class="ripple"><span class="pull-right nav-label"></span><span>Search</span></a></li>
-                  <li><a href="messages.html" class="ripple"><span class="pull-right nav-label"></span><span>Messages Board</span></a></li>
-                </ul>
-              </li>
-              <li><a href="#" class="ripple"><span class="pull-right nav-caret"><em class="ion-ios-arrow-right"></em></span><span class="pull-right nav-label"></span><span class="nav-icon"><img src="" data-svg-replace="assets/img/icons/person-stalker.svg" alt="MenuItem" class="hidden"></span><span>User</span></a>
-                <ul id="user" class="sidebar-subnav">
-                  <li><a href="login.html" class="ripple"><span class="pull-right nav-label"></span><span>Login</span></a></li>
-                  <li><a href="signup.html" class="ripple"><span class="pull-right nav-label"></span><span>Signup</span></a></li>
-                  <li><a href="lock.html" class="ripple"><span class="pull-right nav-label"></span><span>Lock</span></a></li>
-                  <li><a href="recover.html" class="ripple"><span class="pull-right nav-label"></span><span>Recover</span></a></li>
-                </ul>
-              </li>
-              <li><a href="../../angularjs/" class="ripple"><span class="nav-icon"><em class="ion-android-open"></em></span><span>AngularJS</span></a></li>
-            </ul>
-          </nav>
-        </div>
-      </aside>
-      <div class="sidebar-layout-obfuscator"></div>
+
+      <app-sidebar></app-sidebar>
+
       <!-- Main section-->
       <main class="main-container">
         <!-- Page content-->

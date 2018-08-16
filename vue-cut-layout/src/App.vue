@@ -20,124 +20,10 @@
       <!-- Main section-->
       <main class="main-container">
         <!-- Page content-->
-        <section>
-          <div class="container container-lg">
-            <div class="row">
-              <div class="col-lg-8 col-xs-12">
-                <div class="row">
-                  <div class="col-sm-6 col-xs-12">
 
-                    【父層的資料】
-                    <pre>{{parentData}}</pre>
+        <router-view/>
+        <!-- <app-cards></app-cards> -->
 
-                    <!-- ========================================== -->
-                    <!-- ============== Card Start================= -->
-                    <!-- ========================================== -->
-                    <app-card v-for="(item, index) in parentData" :key="index" :myCardTitle="item.season" :myCardBgColor="item.bkColor"></app-card>
-                    <!-- ========================================== -->
-                    <!-- ============== Card End================= -->
-                    <!-- ========================================== -->
-                  </div>
-                  <div class="col-sm-6 col-xs-12">
-                    <div class="card">
-                      <div class="card-heading bg-primary">
-                        <div class="card-title">Paracosm</div>
-                      </div>
-                      <div class="card-offset">
-                        <div class="card-offset-item text-right">
-                          <button type="button" class="btn-raised btn btn-info btn-circle btn-lg"><em class="ion-android-add"></em></button>
-                        </div>
-                      </div>
-                      <div class="card-body pt0">
-                        <p class="mb-sm">Cras rutrum scelerisque auctor. Donec ultricies blandit venenatis. Nulla facilisi. Praesent diam diam, venenatis lorem par.</p>
-                      </div>
-                      <div class="card-footer">
-                        <button type="button" class="btn btn-flat btn-default">Action 1</button>
-                        <button type="button" class="btn btn-flat btn-default">Action 2</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Large card-->
-            <div class="card">
-              <div class="card-heading">
-                <!-- START dropdown-->
-                <div class="pull-right dropdown">
-                  <button type="button" data-toggle="dropdown" class="btn btn-default btn-flat btn-flat-icon"><em class="ion-android-more-vertical"></em></button>
-                  <ul role="menu" class="dropdown-menu md-dropdown-menu dropdown-menu-right">
-                    <li><a href="#">Option 1</a></li>
-                    <li><a href="#">Option 2</a></li>
-                    <li><a href="#">Option 3</a></li>
-                  </ul>
-                </div>
-                <!-- END dropdown-->
-              </div>
-              <div class="card-body pt0">
-                <h3 class="mt0">Technology</h3>
-                <p>Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse. Pariatur occaecat nisi laboris tempor laboris eiusmod qui id Lorem esse commodo in. Exercitation aute dolore deserunt culpa consequat elit labore incididunt elit anim.</p>
-              </div>
-              <div class="card-footer">
-                <button type="button" class="btn btn-flat btn-primary">Read More</button>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-3 col-sm-6 col-xs-12">
-                <div class="card">
-                  <div class="card-item"><img src="../static/assets/img/pic3.jpg" alt="MaterialImg" class="fw img-responsive"></div>
-                  <div class="card-body">
-                    <h4 class="mt0">Freedom in the air</h4>
-                    <p class="m0">Nunc vitae ipsum elit, non lacinia dui. Sed tempor lacinia tempus. Etiam eget congue nulla. Sed quis eros libero, a euismod nisl.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-sm-6 col-xs-12">
-                <div class="card">
-                  <div class="card-item"><img src="../static/assets/img/pic2.jpg" alt="MaterialImg" class="fw img-responsive"></div>
-                  <div class="card-body">
-                    <h4 class="mt0">Mountain lake</h4>
-                    <p>Cras et dui non erat ornare ornare eget non sapien.</p>
-                    <div class="text-right">
-                      <button type="button" class="btn btn-flat btn-primary">Share</button>
-                      <button type="button" class="btn btn-flat btn-primary">More</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-sm-6 col-xs-12">
-                <div class="card">
-                  <div class="card-item"><img src="../static/assets/img/pic1.jpg" alt="MaterialImg" class="fw img-responsive">
-                    <div class="card-item-text"><a href="#" class="link-white"><em class="ion-map mr icon-lg"></em></a><a href="#" class="link-white"><em class="ion-ios-heart-outline mr icon-lg"></em></a><a href="#" class="link-white"><em class="ion-image icon-lg"></em></a></div>
-                  </div>
-                  <div class="card-body">
-                    <h4 class="mt0">Forest trip</h4>
-                    <p>Nullam quis lorem a est auctor venenatis vel vitae ipsum.</p>
-                    <hr>
-                    <div class="clearfix">
-                      <div class="pull-left"><span class="mr-sm text-muted">by</span><a href="#">Bonnie</a></div>
-                      <div class="pull-right text-muted"><em class="ion-android-time mr-sm"></em><span>a week ago</span></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-sm-6 col-xs-12">
-                <div class="card">
-                  <div class="card-item"><img src="../static/assets/img/pic4.jpg" alt="MaterialImg" class="fw img-responsive">
-                    <p class="card-item-text">Picture.png</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-sm-6 col-xs-12">
-                <div class="card">
-                  <div class="card-item"><img src="../static/assets/img/pic1.jpg" alt="MaterialImg" class="fw img-responsive">
-                    <p class="card-item-text">Image.jpg</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
         <!-- Page footer-->
         <footer><span>2017 - Centric app.</span></footer>
       </main>
@@ -363,24 +249,14 @@
 <script>
   import header from './components/header/header.vue'
   import sidebar from './components/sidebar/sidebar.vue'
-  import myCard from './components/myCard/myCard.vue'
+  import cards from '@/components/cards/cards.vue'
 
   export default {
     name: "App" ,
     components: {
       'app-header' : header,
       'app-sidebar': sidebar,
-      'app-card'   : myCard
-    },
-    data() {
-      return {
-        parentData : [
-          { 'season' : 'Spring' , 'bkColor' : 'red'  },
-          { 'season' : 'Summer' , 'bkColor' : 'green'},
-          { 'season' : 'Fall'   , 'bkColor' : 'blue' },
-          { 'season' : 'Winter' , 'bkColor' : 'brown'},
-        ]
-      }
+      'app-cards'  : cards,
     },
   };
 

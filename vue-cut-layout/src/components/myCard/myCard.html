@@ -1,0 +1,44 @@
+<div class="card my-card">{{myCardBgColor}}
+  <div v-bind:class="{'card-heading' : true }" :style="{ 'background-color' : myCardBgColor }">
+    <!-- START dropdown-->
+    <div class="pull-right dropdown">
+      <button type="button" data-toggle="dropdown" class="btn btn-flat btn-flat-icon">
+        <em class="ion-android-more-vertical"></em>
+      </button>
+      <ul role="menu" class="dropdown-menu md-dropdown-menu dropdown-menu-right">
+        <li>
+          <a href="#">Option 1</a>
+        </li>
+        <li>
+          <a href="#">Option 2</a>
+        </li>
+        <li>
+          <a href="#">Option 3</a>
+        </li>
+      </ul>
+    </div>
+    <!-- END dropdown-->
+    <div class="card-title" :style="{'color': 'yellow'}">父層傳入的值：{{ myCardTitle }}</div>
+  </div>
+  <div class="card-body">
+    <p>Nulla egestas faucibus tincidunt.</p>
+    <p class="m0">
+      <a href="#">
+        <img src="static/assets/img/pic1.jpg" alt="Pic" class="mr-sm thumb48">
+      </a>
+      <a href="#">
+        <img src="static/assets/img/pic2.jpg" alt="Pic" class="mr-sm thumb48">
+      </a>
+      <a href="#">
+        <img src="static/assets/img/pic3.jpg" alt="Pic" class="mr-sm thumb48">
+      </a>
+      <a href="#">
+        <img src="static/assets/img/pic4.jpg" alt="Pic" class="mr-sm thumb48">
+      </a>
+    </p>
+  </div>
+  <div class="card-footer">
+    <button type="button" class="btn btn-flat btn-default">Action 1</button>
+    <button type="button" class="btn btn-flat btn-default">Action 2</button>
+  </div>
+</div>

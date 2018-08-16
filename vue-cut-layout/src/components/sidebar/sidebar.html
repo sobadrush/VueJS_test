@@ -7,9 +7,16 @@
     <div class="pull-right pt-lg text-muted hidden">
       <em class="ion-close-round"></em>
     </div>
-    <a href="#" class="sidebar-header-logo">
-      <img src="static/assets/img/logo.png" data-svg-replace="assets/img/logo.svg" alt="Logo">
-      <span class="sidebar-header-logo-text">Centric</span>
+    <a href="javascript:void(0);" class="sidebar-header-logo">
+
+      <!-- 路由 HelloWorld -->
+      <!-- 路由 HelloWorld -->
+      <!-- 路由 HelloWorld -->
+      <router-link :to="{ path: '/home' }">
+        <img src="static/assets/img/logo.png" data-svg-replace="assets/img/logo.svg" alt="Logo">
+        <span class="sidebar-header-logo-text">Centric</span>
+      </router-link>
+
     </a>
   </div>
   <div class="sidebar-content">
@@ -33,13 +40,21 @@
           </a>
         </li>
         <li>
-          <a href="cards.html" class="ripple">
-            <span class="pull-right nav-label"></span>
-            <span class="nav-icon">
-              <img src="" data-svg-replace="assets/img/icons/radio-waves.svg" alt="MenuItem" class="hidden">
-            </span>
-            <span>Cards</span>
-          </a>
+
+          <!-- 路由 cards -->
+          <!-- 路由 cards -->
+          <!-- 路由 cards -->
+          <!-- <router-link :to="{ path: 'cards', params: { userId : 5566 }}" tag="a"> -->
+          <router-link :to="{ name: 'cardsPage', params: { userId : 5566 }}" tag="a">
+            <!-- <a href="javascript:void(0);" class="ripple"> -->
+              <span class="pull-right nav-label"></span>
+              <span class="nav-icon">
+                <img src="" data-svg-replace="assets/img/icons/radio-waves.svg" alt="MenuItem" class="hidden">
+              </span>
+              <span>@@@Cards@@@</span>
+            <!-- </a> -->
+          </router-link>
+
         </li>
         <li>
           <a href="#" class="ripple">

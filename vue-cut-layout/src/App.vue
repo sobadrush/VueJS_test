@@ -249,15 +249,17 @@
 
 
 <script>
-  import header from './components/header/header.vue'
+  import myHeader from './components/myHeader/myHeader.vue'
   import sidebar from './components/sidebar/sidebar.vue'
+  import myCharts from '@/components/myCharts/myCharts.vue';
   import cards from '@/components/cards/cards.vue'
 
   export default {
     name: "App" ,
     components: {
-      'app-header' : header,
+      'app-header' : myHeader,
       'app-sidebar': sidebar,
+      'app-charts' : myCharts,
       'app-cards'  : cards,
     },
   };

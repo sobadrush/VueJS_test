@@ -4,46 +4,32 @@
 </section> -->
 
 
-<section>
+<section style="margin-left:5rem">
 
-<h1>路由參數 >>> {{ $route.params.userId }}</h1>
+
+  <h1 :class="{'my-border':true}">路由參數 >>> {{ this.$route.params.passingMsg }}</h1>
+  <h1 :class="{'my-border':true}">路由參數 >>> {{ this.$route.params.passingMsg2 }}</h1>
 
   <div class="container container-lg">
     <div class="row">
       <div class="col-lg-8 col-xs-12">
         <div class="row">
+
           <div class="col-sm-6 col-xs-12">
 
             【父層的資料】
-            <pre>{{parentData}}</pre>
+            <pre>{{ parentData }}</pre>
 
             <!-- ========================================== -->
-            <!-- ============== Card Start================= -->
+            <!-- ============== Card Start ================ -->
             <!-- ========================================== -->
             <app-card v-for="(item, index) in parentData" :key="index" :myCardTitle="item.season" :myCardBgColor="item.bkColor"></app-card>
             <!-- ========================================== -->
-            <!-- ============== Card End================= -->
+            <!-- ============== Card End ================== -->
             <!-- ========================================== -->
+
           </div>
-          <div class="col-sm-6 col-xs-12">
-            <div class="card">
-              <div class="card-heading bg-primary">
-                <div class="card-title">Paracosm</div>
-              </div>
-              <div class="card-offset">
-                <div class="card-offset-item text-right">
-                  <button type="button" class="btn-raised btn btn-info btn-circle btn-lg"><em class="ion-android-add"></em></button>
-                </div>
-              </div>
-              <div class="card-body pt0">
-                <p class="mb-sm">Cras rutrum scelerisque auctor. Donec ultricies blandit venenatis. Nulla facilisi. Praesent diam diam, venenatis lorem par.</p>
-              </div>
-              <div class="card-footer">
-                <button type="button" class="btn btn-flat btn-default">Action 1</button>
-                <button type="button" class="btn btn-flat btn-default">Action 2</button>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>

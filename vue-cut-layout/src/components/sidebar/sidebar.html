@@ -1,8 +1,9 @@
 <!-- <section class="sidebar">
   <h1 style="background: red;">sidebar Component</h1>
 </section> -->
-
-<section class="sidebar-container sidebar">
+<!-- style="width:25em;" -->
+<!-- :style="[ { 'width' : '19em'} ]" -->
+<section class="sidebar-container sidebar" :style="[ { 'width' : '25rem'} ]">
   <div class="sidebar-header">
     <div class="pull-right pt-lg text-muted hidden">
       <em class="ion-close-round"></em>
@@ -12,9 +13,9 @@
       <!-- 路由 HelloWorld -->
       <!-- 路由 HelloWorld -->
       <!-- 路由 HelloWorld -->
-      <router-link :to="{ path: '/home' }">
+      <router-link :to="{ path: '/' }" tag="h3">
         <img src="static/assets/img/logo.png" data-svg-replace="assets/img/logo.svg" alt="Logo">
-        <span class="sidebar-header-logo-text">Centric</span>
+        <span class="sidebar-header-logo-text">@To首頁</span>
       </router-link>
 
     </a>
@@ -44,14 +45,44 @@
           <!-- 路由 cards -->
           <!-- 路由 cards -->
           <!-- 路由 cards -->
-          <!-- <router-link :to="{ path: 'cards', params: { userId : 5566 }}" tag="a"> -->
-          <router-link :to="{ name: 'cardsPage', params: { userId : 5566 }}" tag="a">
+          <router-link to="/cards" tag="a">
             <!-- <a href="javascript:void(0);" class="ripple"> -->
               <span class="pull-right nav-label"></span>
               <span class="nav-icon">
                 <img src="" data-svg-replace="assets/img/icons/radio-waves.svg" alt="MenuItem" class="hidden">
               </span>
-              <span>@@@Cards@@@</span>
+              <span>@@Cards - 非具名路由(不帶參數)</span>
+            <!-- </a> -->
+          </router-link>
+
+          <router-link to="/cards/FuckYou!!!/你媽" tag="a">
+            <!-- <a href="javascript:void(0);" class="ripple"> -->
+              <span class="pull-right nav-label"></span>
+              <span class="nav-icon">
+                <img src="" data-svg-replace="assets/img/icons/radio-waves.svg" alt="MenuItem" class="hidden">
+              </span>
+              <span>@@Cards - 非具名路由(帶參數)</span>
+            <!-- </a> -->
+          </router-link>
+
+          <router-link :to="{ name: 'cardsPage' }" tag="a">
+            <!-- <a href="javascript:void(0);" class="ripple"> -->
+              <span class="pull-right nav-label"></span>
+              <span class="nav-icon">
+                <img src="" data-svg-replace="assets/img/icons/radio-waves.svg" alt="MenuItem" class="hidden">
+              </span>
+              <span>@@Cards - 具名路由(不帶參數)</span>
+            <!-- </a> -->
+          </router-link>
+
+          <!-- <router-link :to="{ path: 'cards', params: { passingMsg : 5566 }}" tag="a"> -->
+          <router-link :to="{ name: 'cardsPage', params: { 'passingMsg' : '5566' , 'passingMsg2' : '7788' }}" tag="a">
+            <!-- <a href="javascript:void(0);" class="ripple"> -->
+              <span class="pull-right nav-label"></span>
+              <span class="nav-icon">
+                <img src="" data-svg-replace="assets/img/icons/radio-waves.svg" alt="MenuItem" class="hidden">
+              </span>
+              <span>@@Cards - 具名路由(帶參數)</span>
             <!-- </a> -->
           </router-link>
 

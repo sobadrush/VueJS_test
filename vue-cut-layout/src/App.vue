@@ -27,6 +27,8 @@
         <!-- Page footer-->
         <footer><span>2017 - Centric app.</span></footer>
       </main>
+
+
     </div>
     <!-- Search template-->
     <div tabindex="-1" role="dialog" class="modal modal-top fade modal-search">

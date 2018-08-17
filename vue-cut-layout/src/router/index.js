@@ -13,7 +13,7 @@ export default new Router({
       component: cards
     },
     {
-      path: '/cards/:userId?',
+      path: '/cards/:passingMsg?/:passingMsg2?', // ? : 代表userId可有可無
       name: 'cardsPage',
       component: cards
     },

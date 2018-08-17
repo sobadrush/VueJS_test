@@ -1,12 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 
+import HelloWorld from '@/components/HelloWorld'
 import cards from '@/components/cards/cards.vue';
+import myCharts from '@/components/myCharts/myCharts.vue';
+import myFlot from '@/components/myFlot/myFlot.vue';
 
 Vue.use(Router)
 
 export default new Router({
+  // mode:'history',
+  mode:'hash',
   routes: [
     {
       path: '/',
@@ -22,5 +26,13 @@ export default new Router({
       name: 'HelloWorld',
       component: HelloWorld
     },
+    {
+      path: '/charts', component: myCharts,
+      children: [
+        {
+          path: 'flot', component: myFlot
+        },
+      ]
+    }
   ]
 })

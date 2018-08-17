@@ -3,7 +3,10 @@
 <style src="./cards.scss" scoped lang="scss"></style>
 
 <style lang="css" scoped>
-  .my-border {
+  .my-border-red {
     border: 10px solid red;
+  }
+  .my-border-green {
+    border: 10px solid green;
   }
 </style>

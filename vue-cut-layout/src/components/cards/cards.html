@@ -6,9 +6,15 @@
 
 <section style="margin-left:5rem">
 
+  <!-- 載入 BootStrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
-  <h1 :class="{'my-border':true}">路由參數 passingMsg >>> {{ this.$route.params.passingMsg }}</h1>
-  <h1 :class="{'my-border':true}">路由參數 passingMsg2 >>> {{ this.$route.params.passingMsg2 }}</h1>
+  <button type="button" class="btn btn-outline-success" :style="{'margin':'1em'}" @click="toPreviousPage()" >回前頁</button>
+
+  <h1 :class="{'my-border-red':true}">路由參數(path) passingMsg >>> {{ this.$route.params.passingMsg }}</h1>
+  <h1 :class="{'my-border-red':true}">路由參數(path) passingMsg2 >>> {{ this.$route.params.passingMsg2 }}</h1>
+
+  <h1 :class="{'my-border-green':true}">路由參數(query) query.msg001 >>> {{ this.$route.query.msg001 }}</h1>
 
   <div class="container container-lg">
     <div class="row">

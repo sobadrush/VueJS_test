@@ -21,7 +21,7 @@
       <main class="main-container">
         <!-- Page content-->
 
-        <router-view/>
+        <router-view style="margin-left:5rem"/>
         <!-- <app-cards></app-cards> -->
 
         <!-- Page footer-->
@@ -251,16 +251,18 @@
 <script>
   import myHeader from './components/myHeader/myHeader.vue'
   import sidebar from './components/sidebar/sidebar.vue'
-  import myCharts from '@/components/myCharts/myCharts.vue';
   import cards from '@/components/cards/cards.vue'
+  import myCharts from '@/components/myCharts/myCharts.vue';
+  import myFlot from '@/components/myFlot/myFlot.vue';
 
   export default {
     name: "App" ,
     components: {
       'app-header' : myHeader,
       'app-sidebar': sidebar,
-      'app-charts' : myCharts,
       'app-cards'  : cards,
+      'app-charts' : myCharts,
+       myFlot,
     },
   };
 

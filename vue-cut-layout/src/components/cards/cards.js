@@ -22,6 +22,9 @@ export default {
 
   },
   methods: {
-
+    toPreviousPage : function(){
+      console.log("============= 回前頁 ==============");
+      this.$router.go(-1); // 類似 window.history , $router.replace導過來的，不會加到History中，無法使用 $router.go(-1) 回前頁
+    }
   }
 }

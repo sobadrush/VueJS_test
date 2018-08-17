@@ -96,9 +96,20 @@
             <!-- </a> -->
           </router-link>
 
+          <router-link :to="{ path: 'cards' , query : {'msg001' : '幹你罵的'} }" tag="a">
+            <!-- <a href="javascript:void(0);" class="ripple"> -->
+              <span class="pull-right nav-label"></span>
+              <span class="nav-icon">
+                <img src="" data-svg-replace="assets/img/icons/radio-waves.svg" alt="MenuItem" class="hidden">
+              </span>
+              <span>@@Cards - query帶參數</span>
+            <!-- </a> -->
+          </router-link>
+
         </li>
         <li>
-          <a href="#" class="ripple">
+
+          <!-- <a href="#" class="ripple">
             <span class="pull-right nav-caret">
               <em class="ion-ios-arrow-right"></em>
             </span>
@@ -107,13 +118,39 @@
               <img src="" data-svg-replace="assets/img/icons/connection-bars.svg" alt="MenuItem" class="hidden">
             </span>
             <span>Charts</span>
-          </a>
+          </a> -->
+
+          <!-- <router-link :to="{ path: '/charts' }" tag="a"> -->
+          <router-link to="/charts" tag="a">
+            <!-- <a href="#" class="ripple"> -->
+                <span class="pull-right nav-caret">
+                  <em class="ion-ios-arrow-right"></em>
+                </span>
+                <span class="pull-right nav-label"></span>
+                <span class="nav-icon">
+                  <img src="" data-svg-replace="assets/img/icons/connection-bars.svg" alt="MenuItem" class="hidden">
+                </span>
+                <span>@@@ Charts - 子路由</span>
+              <!-- </a> -->
+          </router-link>
+
           <ul class="sidebar-subnav">
             <li>
-              <a href="flot.html" class="ripple">
+              <!--
+                <a href="flot.html" class="ripple">
+                  <span class="pull-right nav-label"></span>
+                  <span>Flot</span>
+                </a>
+              -->
+
+              <!-- Flot導頁 -->
+              <!-- Flot導頁 -->
+              <!-- Flot導頁 -->
+              <router-link :to="{ path: '/charts/flot' }" tag="a">
                 <span class="pull-right nav-label"></span>
-                <span>Flot</span>
-              </a>
+                <span>@@@ Flot</span>
+              </router-link>
+
             </li>
             <li>
               <a href="radial.html" class="ripple">

@@ -31,6 +31,8 @@
   import test_002Comp from '@/components/test_002/test_002.vue';
   import test_003Comp from '@/components/test_003/test_003.vue';
   import test_004Comp from '@/components/test_004/test_004.vue';
+  import practice2Comp from '@/components/practice2/practice2.vue';
+  import fetchDataByJqueryAjaxComp from '@/components/fetchDataByJqueryAjax/fetchDataByJqueryAjax.vue';
 
   export default {
     name: 'App',
@@ -40,6 +42,8 @@
       test_002Comp,
       test_003Comp,
       test_004Comp,
+      practice2Comp,
+      fetchDataByJqueryAjaxComp,
     }
   }
 </script>

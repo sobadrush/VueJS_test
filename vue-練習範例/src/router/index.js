@@ -7,6 +7,8 @@ import test_001Comp from '@/components/test_001/test_001.vue';
 import test_002Comp from '@/components/test_002/test_002.vue';
 import test_003Comp from '@/components/test_003/test_003.vue';
 import test_004Comp from '@/components/test_004/test_004.vue';
+import practice2Comp from '@/components/practice2/practice2.vue';
+import fetchDataByJqueryAjaxComp from '@/components/fetchDataByJqueryAjax/fetchDataByJqueryAjax.vue';
 
 Vue.use(Router)
 
@@ -31,6 +33,12 @@ const router = new Router({
         { path: 'test002', component: test_002Comp } ,
         { path: 'test003', component: test_003Comp } ,
         { path: 'test004', component: test_004Comp } ,
+      ]
+    },
+    {
+      path: '/practice2' , name : 'practice2' , component : practice2Comp ,
+      children : [ // 子路由(嵌套路由) ,
+        { path: 'test_jqueryAjax', name: 'jqueryAjax' , component: fetchDataByJqueryAjaxComp } , // ※※※ 當 /practice/test001 test_001Comp 会被渲染在 【practiceComp】 的 <router-view> 中
       ]
     },
     { path: '*', redirect: '/' } // 萬用路由(放最後)

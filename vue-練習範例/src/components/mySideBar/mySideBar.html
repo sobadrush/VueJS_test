@@ -11,8 +11,8 @@
         </router-link>
 
         <li class="active">
-            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">練習區</a>
-            <ul class="collapse list-unstyled" id="homeSubmenu">
+            <a href="#practice1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">練習區1</a>
+            <ul class="collapse list-unstyled" id="practice1">
                 <li>
                     <!-- <a href="#">Home 1</a> -->
                     <router-link :to="{ path : '/practice/test001' }" tag="a">
@@ -36,6 +36,19 @@
                 </li>
             </ul>
         </li>
+
+        <li>
+            <a href="#practice2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">練習區2</a>
+            <ul class="collapse list-unstyled" id="practice2">
+                <li>
+                    <!-- 命名路由 ─ 直接指定到children路由上 -->
+                    <router-link :to="{ name : 'jqueryAjax' }" tag="a">
+                      jQuery - ajax取資料
+                    </router-link>
+                </li>
+            </ul>
+        </li>
+
         <li>
             <a href="#">About</a>
         </li>

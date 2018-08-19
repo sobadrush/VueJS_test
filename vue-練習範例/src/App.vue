@@ -28,12 +28,14 @@
   // === local-註冊 元件 (1) ===
   import practiceComp from '@/components/practice/practice.vue';
   import test_001Comp from '@/components/test_001/test_001.vue';
+  import test_002Comp from '@/components/test_002/test_002.vue';
 
   export default {
     name: 'App',
     components: { // === local-註冊 元件 (2) ===
       practiceComp,
       test_001Comp,
+      test_002Comp,
     }
   }
 </script>

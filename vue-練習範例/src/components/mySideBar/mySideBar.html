@@ -1,9 +1,3 @@
-<!--
-<section class="my-side-bar">
-  <h1>my-side-bar Component</h1>
-</section>
- -->
-
 <nav id="sidebar">
     <div class="sidebar-header">
         <h3>Bootstrap Sidebar</h3>
@@ -17,10 +11,14 @@
         </router-link>
 
         <li class="active">
-            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">練習區</a>
             <ul class="collapse list-unstyled" id="homeSubmenu">
                 <li>
-                    <a href="#">Home 1</a>
+                    <!-- <a href="#">Home 1</a> -->
+                    <router-link :to="{ path : '/practice/test001' }" tag="a">
+                      v-for 與 v-if
+                    </router-link>
+
                 </li>
                 <li>
                     <a href="#">Home 2</a>

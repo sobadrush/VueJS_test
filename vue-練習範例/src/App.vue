@@ -1,23 +1,50 @@
 <template>
-  <div id="app">
+  <!-- <div id="main-div">
     <img src="./assets/logo.png">
     <router-view/>
-  </div>
+  </div> -->
+
+ <div class="wrapper">
+
+        <!-- Header -->
+        <app-header></app-header>
+
+        <!-- Sidebar  -->
+        <app-sidebar></app-sidebar>
+
+        <!-- Page Content  -->
+        <div id="content" style="margin-top:3cm;">
+
+            <!-- ※※※ 路由抽換處 ※※※ -->
+            <router-view/>
+
+        </div>
+    </div>
+
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+
+  // === local-註冊 元件 (1) ===
+  import practiceComp from '@/components/practice/practice.vue';
+  import test_001Comp from '@/components/test_001/test_001.vue';
+
+  export default {
+    name: 'App',
+    components: { // === local-註冊 元件 (2) ===
+      practiceComp,
+      test_001Comp,
+    }
+  }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #main-div {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
 </style>

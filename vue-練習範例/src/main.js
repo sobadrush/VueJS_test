@@ -4,7 +4,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import myHeader from '@/components/myHeader/myHeader.vue';
+import mySideBar from '@/components/mySideBar/mySideBar.vue';
+
 Vue.config.productionTip = false
+
+Vue.component('app-header' , myHeader)
+Vue.component('app-sidebar' , mySideBar)
 
 /* eslint-disable no-new */
 new Vue({

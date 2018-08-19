@@ -1,0 +1,39 @@
+
+<section class="test-003" :style="{ 'margin-top': '1cm' }">
+  <h1 class="title-font-style">test-003 Component - 測試 v-on 事件綁定</h1>
+
+  <h2> 您最喜歡的遊戲是： <b style="color:red">{{ favoriteGame || 'none' }}</b></h2>
+
+  <button type="button" class="btn btn-primary" v-on:click="doClick($event)">刺客教條</button>
+  <button type="button" class="btn btn-secondary" @click="doClick($event)">馬力歐</button>
+  <button type="button" class="btn btn-success" @click="doClick($event)">龍珠超宇宙</button>
+  <button type="button" class="btn btn-danger" @click="doClick($event)">極速快感III</button>
+  <button type="button" class="btn btn-warning" @click="doClick($event)">幽遊白書</button>
+
+  <div style="background:cadetblue;width:3cm;height:3cm;" class="margin-around" @dblclick="doDoubleClick()">測試dbClick</div>
+
+  <textarea cols="30" rows="3" placeholder="測試keyup" @keyup="doKeyUp()"></textarea>
+
+  <h4 style="margin-top:1.5cm;">測試stopPropagation</h4>
+  <div style="background:rgb(14, 138, 25);width:5cm;height:5cm;padding:5px;" class="margin-around" @click="doAlert($event)" id="div-Outer">
+    div-Outer
+    <div style="background:rgb(218, 53, 12);width:3cm;height:3cm;" class="margin-around" @click.stop="doAlert($event)" id="div-Inner">
+      div-Inner
+    </div>
+  </div>
+
+  <h4 style="margin-top:1.5cm;">測試 preventDefault</h4>
+  <form action="https://tw.yahoo.com/" method="get" v-on:submit.prevent>
+    <input type="submit" value="doSubmit"/>
+  </form>
+
+  <h4 style="margin-top:1.5cm;">按键修饰符</h4>
+
+  <input type="text" style="width:10cm" v-on:keyup.13="doLog($event)" placeholder="只有在keycode=13 (Enter按下時觸發)"><br>
+  <input type="text" style="width:10cm" v-on:keyup.enter="doLog($event)" placeholder="只有在 Enter 按下時觸發"><br>
+  <input type="text" style="width:10cm" v-on:keyup.space="doLog($event)" placeholder="只有在 space 按下時觸發"><br>
+  <input type="text" style="width:10cm" v-on:keyup.esc="doLog($event)" placeholder="只有在 esc 按下時觸發"><br>
+
+
+</section>
+

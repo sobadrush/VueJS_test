@@ -19,7 +19,8 @@ export default new Router({
     {
       path: '/cards/:passingMsg?/:passingMsg2?', // ? : 代表userId可有可無
       name: 'cardsPage',
-      component: cards
+      component: cards,
+      props: true
     },
     {
       path: '/home',

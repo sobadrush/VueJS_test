@@ -6,7 +6,7 @@
 
 <!-- Page content-->
 <section>
-  <h1 :class="{'my-bg-color' : true}">My-Flot Component</h1>
+  <h1 :class="{'my-bg-color-pink' : true}">My-Flot Component</h1>
 
 
   <!-- 載入 BootStrap -->
@@ -16,7 +16,12 @@
   <button type="button" class="btn btn-outline-danger" v-on:click="toCardPage($event)" >到Cards(不帶參數)</button>
   <button type="button" class="btn btn-outline-primary" @click="toCardPage_with_queryParam($event)" >到Cards(帶query參數)</button>
   <button type="button" class="btn btn-outline-warning" @click="toCardPage_with_pathParam($event)" >到Cards(帶path參數)</button>
-  <button type="button" class="btn btn-outline-info" @click="toCardPage_with_pathParam_replace($event)" >到Cards(帶path參數 , replace)</button>
+
+  <router-link :to="{ name: 'cardsPage' }" replace>
+    <button type="button" class="btn btn-outline-info">到Cards( <b class="my-color-red">標籤式</b>，帶path參數 , replace)</button>
+  </router-link>
+
+  <button type="button" class="btn btn-outline-info" @click="toCardPage_with_pathParam_replace($event)" >到Cards(<b class="my-color-red">編程式</b>，帶path參數 , replace)</button>
 
   <div class="container-fluid">
     <!-- START row-->

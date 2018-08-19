@@ -9,4 +9,7 @@
   .my-border-green {
     border: 10px solid green;
   }
+  .my-border-brown {
+    border: 10px solid brown;
+  }
 </style>

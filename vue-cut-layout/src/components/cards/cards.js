@@ -4,7 +4,7 @@ export default {
   components: {
     'app-card' : myCard,
   },
-  props: [],
+  props: [ 'passingMsg' , 'passingMsg2' ], // index.js中，props: true，将组件和路由解耦 【https://router.vuejs.org/zh/guide/essentials/passing-props.html】
   data() {
     return {
       parentData : [

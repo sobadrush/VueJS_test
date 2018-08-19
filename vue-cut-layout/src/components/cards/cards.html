@@ -1,9 +1,4 @@
 
-<!-- <section class="cards">
-  <h1>cards Component</h1>
-</section> -->
-
-
 <section style="margin-left:5rem">
 
   <!-- 載入 BootStrap -->
@@ -13,8 +8,11 @@
 
   <h1 :class="{'my-border-red':true}">路由參數(path) passingMsg >>> {{ this.$route.params.passingMsg }}</h1>
   <h1 :class="{'my-border-red':true}">路由參數(path) passingMsg2 >>> {{ this.$route.params.passingMsg2 }}</h1>
-
   <h1 :class="{'my-border-green':true}">路由參數(query) query.msg001 >>> {{ this.$route.query.msg001 }}</h1>
+
+  <h3>index.js中，props: true，将组件和路由解耦</h3>
+  <h1 :class="{'my-border-brown':true}">使用 props 屬性 {{ '{' + '{passingMsg}' + '}' }} >>> {{ passingMsg }}</h1>
+  <h1 :class="{'my-border-brown':true}">使用 props 屬性 {{ '{' + '{passingMsg2}' + '}' }} >>> {{ passingMsg2 }}</h1>
 
   <div class="container container-lg">
     <div class="row">

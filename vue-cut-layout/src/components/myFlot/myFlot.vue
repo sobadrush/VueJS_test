@@ -3,7 +3,10 @@
 <style src="./myFlot.scss" scoped lang="scss"></style>
 
 <style lang="css" scoped>
-  .my-bg-color {
+  .my-bg-color-pink {
       background: pink;
+  }
+  .my-color-red {
+      background: red;
   }
 </style>

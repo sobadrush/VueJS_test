@@ -6,6 +6,7 @@ import practiceComp from '@/components/practice/practice.vue';
 import test_001Comp from '@/components/test_001/test_001.vue';
 import test_002Comp from '@/components/test_002/test_002.vue';
 import test_003Comp from '@/components/test_003/test_003.vue';
+import test_004Comp from '@/components/test_004/test_004.vue';
 
 Vue.use(Router)
 
@@ -29,6 +30,7 @@ const router = new Router({
         { path: 'test001', component: test_001Comp } , // ※※※ 當 /practice/test001 test_001Comp 会被渲染在 【practiceComp】 的 <router-view> 中
         { path: 'test002', component: test_002Comp } ,
         { path: 'test003', component: test_003Comp } ,
+        { path: 'test004', component: test_004Comp } ,
       ]
     },
     { path: '*', redirect: '/' } // 萬用路由(放最後)

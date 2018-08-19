@@ -1,0 +1,12 @@
+
+<section class="test-004">
+  <h1 class="title-font-style">test-004 Component - 測試vue組件 + for迴圈 (父傳子)</h1>
+
+  <app-test004-child v-bind:dataFromParent="'幹你娘'"></app-test004-child>
+
+  seasonArray = {{ seasonArray }}
+  <app-test004-child v-for="(item, index) in seasonArray" :key="index"
+        v-bind:perSeason_name="item.name" :perSeason_color="item.color" :idx="index"></app-test004-child>
+
+</section>
+

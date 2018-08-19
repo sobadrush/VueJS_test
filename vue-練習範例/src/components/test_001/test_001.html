@@ -6,6 +6,8 @@
 
   <button type="button" class="btn btn-primary" :class="{'margin-around':true}" @click="doShowAll($event)">顯示所有遊戲</button>
 
+  <b> {{ '{' + '{isShowing}' + '}' }}  = {{ isShowing }}</b>
+
   <table class="table table-sm" border="1">
     <thead>
       <tr class="table-info">

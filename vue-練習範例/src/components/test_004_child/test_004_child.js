@@ -3,6 +3,7 @@ export default {
   components: {},
   props: [
     'dataFromParent' ,
+    'perSeason',
     'perSeason_name',
     'perSeason_color',
     'idx',
@@ -12,7 +13,6 @@ export default {
     }
   },
   computed: {
-
   },
   mounted () {
     // console.log('this >>> ' , this);

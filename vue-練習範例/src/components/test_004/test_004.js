@@ -4,7 +4,6 @@ export default {
   name: 'test-004',
   components: {
     'app-test004-child' : test_004_childComp ,
-
   },
   props: [],
   data () {

@@ -1,0 +1,38 @@
+
+<section class="fetch-data-by-axios">
+  <h1 class="title-font-style">test-003 - 測試 Vue 推薦 axios API</h1>
+
+  <input type="text" style="text-align:center;" v-model="queryCityId">
+  <button type="button" class="btn btn-primary margin-around" @click="doFetchDataEs6FetchAPiGet(queryCityId)">
+    取得天氣預報 <b v-if="Object.keys(townsData).length != 0">( {{ townsData.name }} )</b>
+  </button>
+
+  <button type="button" class="btn btn-secondary margin-around" @click="clearData()">清除資料</button>
+
+  <table class="table table-sm" border="2">
+      <thead>
+        <tr class="table-danger">
+          <th scope="col" style="width:2%">#</th>
+          <th scope="col">cwb_id</th>
+          <th scope="col">區名</th>
+          <th scope="col">經度</th>
+          <th scope="col">緯度</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(item , indexFuck) in townsData.towns" :key="item.cwb_id">
+            <th scope="row">{{ indexFuck + 1 }}</th>
+            <th scope="row">{{ item.cwb_id }}</th>
+            <th scope="row">{{ item.name }}</th>
+            <th scope="row">{{ item.position.lat }}</th>
+            <th scope="row">{{ item.position.lng }}</th>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- <pre>
+        {{ this.townsData }}
+    </pre> -->
+
+</section>
+

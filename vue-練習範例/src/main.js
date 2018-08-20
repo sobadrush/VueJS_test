@@ -7,7 +7,12 @@ import router from './router'
 import myHeader from '@/components/myHeader/myHeader.vue';
 import mySideBar from '@/components/mySideBar/mySideBar.vue';
 
+import axios from 'axios'
+
 Vue.config.productionTip = false
+
+/* 不用像前一篇載入Vue plugin */
+Vue.prototype.$http = axios
 
 Vue.component('app-header' , myHeader)
 Vue.component('app-sidebar' , mySideBar)

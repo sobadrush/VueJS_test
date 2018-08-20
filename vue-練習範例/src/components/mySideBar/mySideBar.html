@@ -47,9 +47,15 @@
                     </router-link>
                 </li>
                 <li>
-                    <!-- 命名路由 ─ 直接指定到children路由上 -->
+                    <!-- Path路由 -->
                     <router-link :to="{ path : '/practice2/test_Es6FetchApi' }" tag="a">
                       Es6 - FetchApi取資料
+                    </router-link>
+                </li>
+                <li>
+                    <!-- 命名路由 ─ 直接指定到children路由上 -->
+                    <router-link :to="{ name : 'axiosApi' }" tag="a">
+                      Vue官方推薦 - axios取資料
                     </router-link>
                 </li>
             </ul>

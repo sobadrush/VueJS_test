@@ -1,5 +1,43 @@
 <section class="test-007">
   <h1 class="title-font-style">test-007 Component - 計算屬性(Computed)</h1>
+
+  <p>https://ithelp.ithome.com.tw/articles/10187537</p>
+  <p>顯而易見的好處，幫你 收納 Template 中的邏輯，給予邏輯更為明確的命名。</p>
+  <p>計算屬性(Computed) 另一個好處「其相依 data 一變，computed 也會隨之更新」，反過來講，相依 data 不變就不會重複計算(反正結果也一樣)，computed直接吐回結果。</p>
+
+  <div class="input-group input-group-lg">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-lg">輸入名子(v-model)</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" v-model="firstName">
+  </div>
+
+  <div class="input-group input-group-lg">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-lg">輸入姓氏(v-model)</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" v-model="lastName">
+  </div>
+
+  <hr>
+  <h3 :class="{ 'my-font-style' : true }"> {{ '{' + '{firstName}' + '}' }} = {{ firstName }}</h3>
+  <h3 :class="{ 'my-font-style' : true }"> {{ '{' + '{lastName}' + '}' }} = {{ lastName }}</h3>
+  <hr>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">fullName 全名</span>
+    </div>
+    <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" :value="fullName">
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">shortName 短名</span>
+    </div>
+    <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" :value="shortName">
+  </div>
+
 </section>
 
 

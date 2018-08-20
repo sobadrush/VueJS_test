@@ -3,7 +3,7 @@
   <h1 class="title-font-style">test-003 - 測試 Vue 推薦 axios API</h1>
 
   <input type="text" style="text-align:center;" v-model="queryCityId">
-  <button type="button" class="btn btn-primary margin-around" @click="doFetchDataEs6FetchAPiGet(queryCityId)">
+  <button type="button" class="btn btn-primary margin-around" @click="doFetchDataAxios(queryCityId)">
     取得天氣預報 <b v-if="Object.keys(townsData).length != 0">( {{ townsData.name }} )</b>
   </button>
 

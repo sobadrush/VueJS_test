@@ -4,23 +4,23 @@ export default {
   name: 'fetch-data-by-es-6-fetch-api',
   components: {},
   props: [],
-  data () {
+  data() {
     return {
-      queryCityId : '1' ,
-      townsData : {} ,
+      queryCityId: '1',
+      townsData: {},
     }
   },
   computed: {
 
   },
-  mounted () {
+  mounted() {
 
   },
   methods: {
-    clearData : function(){
+    clearData: function () {
       this.townsData = {};
     },
-    doFetchDataEs6FetchAPiGet : function( _cityId ){
+    doFetchDataEs6FetchAPiGet: function (_cityId) {
 
       this.queryCityId = _cityId;
 
@@ -34,8 +34,8 @@ export default {
         .then((res /*ReadableStream物件*/ ) => {
           console.log('res >>> ' , res);
 
-          if (res.ok == false) {
-            throw new Error(res.statusText)
+          if (res.ok === false) {
+            throw new Error(`幹你娘 , ` + res.statusText);
           }
 
           return res.json(); // Promise物件
@@ -45,12 +45,11 @@ export default {
           // this.$set(this.townsData , cbData);
           // Vue.set(this.townsData , cbData);
           this.townsData = cbData;
-        }).catch(function(err) {
-          console.log('>>>>>>>>> catch <<<<<<<<<');
-          return err.response.json();
-        }).then((err) => {
-          // Promise特性：不管catch有沒有東西，都會持續往後then, 所以此處的 then 其實不必要
-          console.log('FAIL >>> ' , err);
+          return
+        }).catch((err) => {
+          console.log('catch , err >>> ' , err);
+        }).finally(()=>{
+          alert(`completed!!`);
         });
 
       //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -69,29 +68,34 @@ export default {
       //     self.townsData = cbData;
       //   }).catch(function(err) {
       //     return err.response.json();
+      //   }).finally(function(){
+      //     alert(`completed!!`);
       //   });
 
       //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
       // ※ Type (3) FetchAPI + 箭頭函數 , 建立Request物件
       //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
       // Fetch API【https://ithelp.ithome.com.tw/articles/10194107】
-      // const req = new Request(toUrl,{ method: 'GET', cache: 'reload' });
+      // const req = new Request(toUrl, {
+      //   method: 'GET',
+      //   cache: 'reload'
+      // });
       // window.fetch(req)
-      //     .then(processStatus)
-      //     .then((res /*ReadableStream物件*/) => {
-      //       console.log('ReadableStream物件 res >>> ' , res);
-      //       return res.json(); // Promise物件
-      //     })
-      //     .then((cbData) => {
-      //       console.log('cbData >>> ' , cbData);
-      //       // this.$set(this.townsData , cbData);
-      //       // Vue.set(this.townsData , cbData);
-      //       this.townsData = cbData;
-      //     }).catch(function(err) {
-      //       alert('Fail : ' + err.response.json());
-      //       return err.response.json();
-      //     });
-
+      //   .then(processStatus)
+      //   .then((res /*ReadableStream物件*/ ) => {
+      //     console.log('ReadableStream物件 res >>> ', res);
+      //     return res.json(); // Promise物件
+      //   })
+      //   .then((cbData) => {
+      //     console.log('cbData >>> ', cbData);
+      //     // this.$set(this.townsData , cbData);
+      //     // Vue.set(this.townsData , cbData);
+      //     this.townsData = cbData;
+      //   }).catch((err) => {
+      //     console.log('Fail : ', err);
+      //   }).finally(() => {
+      //     alert(`completed!!`);
+      //   });
 
     },
   }
@@ -99,11 +103,11 @@ export default {
 
 function processStatus(response) {
   // 狀態 "0" 是處理本地檔案 (例如Cordova/Phonegap等等)
-  if (response.status === 200 || response.status === 0) {
-      console.log(' >>>>>>>>>> 111 <<<<<<<<<< ');
-      return Promise.resolve(response)
+  if (response.status == 200 || response.status === 0) {
+    console.log(' >>>>>>>>>> 111 <<<<<<<<<< ');
+    return Promise.resolve(response)
   } else {
     console.log(' >>>>>>>>>> 222 <<<<<<<<<< ');
-      return Promise.reject(new Error(response.statusText))
+    return Promise.reject(new Error(response.statusText))
   }
 }

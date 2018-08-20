@@ -7,6 +7,9 @@ import test_001Comp from '@/components/test_001/test_001.vue';
 import test_002Comp from '@/components/test_002/test_002.vue';
 import test_003Comp from '@/components/test_003/test_003.vue';
 import test_004Comp from '@/components/test_004/test_004.vue';
+import test_005Comp from '@/components/test_005/test_005.vue';
+import test_006Comp from '@/components/test_006/test_006.vue';
+import test_007Comp from '@/components/test_007/test_007.vue';
 import practice2Comp from '@/components/practice2/practice2.vue';
 import fetchDataByJqueryAjaxComp from '@/components/fetchDataByJqueryAjax/fetchDataByJqueryAjax.vue';
 import fetchDataByEs6FetchAPIComp from '@/components/fetchDataByEs6FetchAPI/fetchDataByEs6FetchAPI.vue';
@@ -35,6 +38,9 @@ const router = new Router({
         { path: 'test002', component: test_002Comp } ,
         { path: 'test003', component: test_003Comp } ,
         { path: 'test004', component: test_004Comp } ,
+        { path: 'test005', component: test_005Comp } ,
+        { path: 'test006', component: test_006Comp } ,
+        { path: 'test007', name : 'test007Fuck' , component: test_007Comp } ,
       ]
     },
     {

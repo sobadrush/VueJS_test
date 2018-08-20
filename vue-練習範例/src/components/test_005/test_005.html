@@ -1,3 +1,14 @@
 <section class="test-005">
   <h1 class="title-font-style">test-005 Component - 元件溝通(子傳父)</h1>
+
+  <p>https://ithelp.ithome.com.tw/articles/10188091</p>
+
+  <hr>
+  <img src="static/assest/img/vue元件溝通.png" :style="{'width': '10cm'}">
+  <hr>
+
+  <p>總來客量: {{ total }}</p>
+  <button-counter door="前門" v-on:increment="incrementTotal"></button-counter>
+  <button-counter door="後門" @increment="incrementTotal"></button-counter>
+
 </section>

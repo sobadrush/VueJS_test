@@ -33,6 +33,7 @@
   import test_004Comp from '@/components/test_004/test_004.vue';
   import practice2Comp from '@/components/practice2/practice2.vue';
   import fetchDataByJqueryAjaxComp from '@/components/fetchDataByJqueryAjax/fetchDataByJqueryAjax.vue';
+  import fetchDataByEs6FetchAPIComp from '@/components/fetchDataByEs6FetchAPI/fetchDataByEs6FetchAPI.vue';
 
   export default {
     name: 'App',
@@ -44,6 +45,7 @@
       test_004Comp,
       practice2Comp,
       fetchDataByJqueryAjaxComp,
+      fetchDataByEs6FetchAPIComp,
     }
   }
 </script>

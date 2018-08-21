@@ -33,8 +33,8 @@ Vue.component('childA'/*html中要改串燒式*/, {
       // 【param1 : 自訂事件名稱】
       // 【param2 : 傳遞的資料 event-data】
       this.$bus.$emit('specialEvent', {
-          msg: 30678,
-          title: '操妳妹'
+          msg: '高義你他媽雜碎',
+          title: 30678
       });
     }
   }
@@ -73,7 +73,7 @@ Vue.component('childB'/*html中要改串燒式*/, {
     },
     sayFuck() {
       this.$bus.$emit('fuckEvent', {
-        msg: `你他媽的B`,
+        msg: `你他媽的B`, empId : 7788
       });
     }
   }

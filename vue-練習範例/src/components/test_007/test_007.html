@@ -28,15 +28,32 @@
     <div class="input-group-prepend">
       <span class="input-group-text" id="basic-addon1">fullName 全名</span>
     </div>
-    <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" :value="fullName">
+    <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" :value="fullName">
   </div>
 
   <div class="input-group mb-3">
     <div class="input-group-prepend">
       <span class="input-group-text" id="basic-addon1">shortName 短名</span>
     </div>
-    <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" :value="shortName">
+    <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" :value="shortName">
   </div>
+
+  <hr>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">fullNameFuck (使用get/set)...get</span>
+    </div>
+    <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" :value="fullNameFuck">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <button class="btn btn-success" @click="doModifyFullName( newFullName )">我是按鈕，fullNameFuck (使用get/set)...set</button>
+    </div>
+    <input type="text" class="form-control" placeholder="" v-model="newFullName">{{ newFullName }}
+  </div>
+
+  <h3 :class="{ 'my-font-style' : true }"> {{ '{' + '{fullNameFuck}' + '}' }} = {{ fullNameFuck }}</h3>
 
 </section>
 

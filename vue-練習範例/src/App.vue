@@ -34,6 +34,8 @@
   import test_005Comp from '@/components/test_005/test_005.vue';
   import test_006Comp from '@/components/test_006/test_006.vue';
   import test_007Comp from '@/components/test_007/test_007.vue';
+  import test_008Comp from '@/components/test_008/test_008.vue';
+  import test_009Comp from '@/components/test_009/test_009.vue';
   import practice2Comp from '@/components/practice2/practice2.vue';
   import fetchDataByJqueryAjaxComp from '@/components/fetchDataByJqueryAjax/fetchDataByJqueryAjax.vue';
   import fetchDataByEs6FetchAPIComp from '@/components/fetchDataByEs6FetchAPI/fetchDataByEs6FetchAPI.vue';
@@ -50,11 +52,13 @@
       test_005Comp,
       test_006Comp,
       test_007Comp,
+      test_008Comp,
+      test_009Comp,
       practice2Comp,
       fetchDataByJqueryAjaxComp,
       fetchDataByEs6FetchAPIComp,
       fetchDataByAxiosComp,
-    }
+    },
   }
 </script>
 
@@ -75,5 +79,8 @@
   }
   .margin-around {
     margin : 0.5cm;
+  }
+  .text-center {
+    text-align: center;
   }
 </style>

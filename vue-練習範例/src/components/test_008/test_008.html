@@ -1,0 +1,19 @@
+
+<section class="test-008">
+  <h1 class="title-font-style">test-008 Component - filter(過濾器)</h1>
+
+  <hr>
+  <p>Filter 有分【局部註冊】【全域註冊】</p>
+  <p>Filter 是有呼叫順序的</p>
+  <p>Filter 可以傳參數</p>
+
+  <hr>
+  <h2>{{ '{' + '{ gameName }' + '}' }} ... 使用 globalFirst2Chars 過濾 >>> {{ gameName | globalFirst2Chars}}</h2>
+  <h2>{{ '{' + '{ gameName }' + '}' }} ... 使用 globalFirst1Chars 過濾 >>> {{ gameName | globalFirst1Chars}}</h2>
+  <h2>{{ '{' + '{ gameName }' + '}' }} ... 使用 globalPrompt 過濾 >>> {{ gameName | globalPrompt( 'Fuck' , 'Mother' )}}</h2>
+  <h2>{{ '{' + '{ gamePrice }' + '}' }} ... 使用 priceFormatJpyBefore、priceFormatJpyAfter >>> {{ gamePrice | priceFormatJpyBefore | priceFormatJpyAfter }}</h2>
+
+  <hr>
+
+</section>
+

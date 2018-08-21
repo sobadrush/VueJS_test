@@ -45,8 +45,21 @@
                     </router-link>
                 </li>
                 <li>
+                    <!-- 直接用命名路由指定 -->
                     <router-link :to="{ name : 'test007Fuck' }" tag="a">
                       計算屬性(Computed)
+                    </router-link>
+                </li>
+                <li>
+                    <!-- 直接用命名路由指定 -->
+                    <router-link :to="{ name : 'test008Fuck' }" tag="a">
+                      filter(過濾器)
+                    </router-link>
+                </li>
+                <li>
+                    <!-- 直接用命名路由指定 -->
+                    <router-link :to="{ name : 'test009Fuck' }" tag="a">
+                      vue - for 篩選+每頁筆數
                     </router-link>
                 </li>
             </ul>
@@ -64,13 +77,19 @@
                 <li>
                     <!-- Path路由 -->
                     <router-link :to="{ path : '/practice2/test_Es6FetchApi' }" tag="a">
-                      Es6 - FetchApi取資料
+                      ES6 - FetchApi取資料
                     </router-link>
                 </li>
                 <li>
                     <!-- 命名路由 ─ 直接指定到children路由上 -->
                     <router-link :to="{ name : 'axiosApi' }" tag="a">
                       Vue官方推薦 - axios取資料
+                    </router-link>
+                </li>
+                <li>
+                    <!-- 命名路由 ─ 直接指定到children路由上 -->
+                    <router-link :to="{ name : 'axiosApiWithFilter' }" tag="a">
+                       axios取資料 - filter - limitTo
                     </router-link>
                 </li>
             </ul>

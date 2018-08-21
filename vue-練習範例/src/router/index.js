@@ -10,10 +10,13 @@ import test_004Comp from '@/components/test_004/test_004.vue';
 import test_005Comp from '@/components/test_005/test_005.vue';
 import test_006Comp from '@/components/test_006/test_006.vue';
 import test_007Comp from '@/components/test_007/test_007.vue';
+import test_008Comp from '@/components/test_008/test_008.vue';
+import test_009Comp from '@/components/test_009/test_009.vue';
 import practice2Comp from '@/components/practice2/practice2.vue';
 import fetchDataByJqueryAjaxComp from '@/components/fetchDataByJqueryAjax/fetchDataByJqueryAjax.vue';
 import fetchDataByEs6FetchAPIComp from '@/components/fetchDataByEs6FetchAPI/fetchDataByEs6FetchAPI.vue';
 import fetchDataByAxiosComp from '@/components/fetchDataByAxios/fetchDataByAxios.vue';
+import fetchData_FilterComp from '@/components/fetchData_Filter/fetchData_Filter.vue';
 
 Vue.use(Router)
 
@@ -41,6 +44,8 @@ const router = new Router({
         { path: 'test005', component: test_005Comp } ,
         { path: 'test006', component: test_006Comp } ,
         { path: 'test007', name : 'test007Fuck' , component: test_007Comp } ,
+        { path: 'test008', name : 'test008Fuck' , component: test_008Comp } ,
+        { path: 'test009', name : 'test009Fuck' , component: test_009Comp } ,
       ]
     },
     {
@@ -49,6 +54,7 @@ const router = new Router({
         { path: 'test_jqueryAjax', name: 'jqueryAjax' , component: fetchDataByJqueryAjaxComp } , // ※※※ 當 /practice/test001 test_001Comp 会被渲染在 【practiceComp】 的 <router-view> 中
         { path: 'test_Es6FetchApi', name: 'es6FetchApi' , component: fetchDataByEs6FetchAPIComp } ,
         { path: 'test_axios', name: 'axiosApi' , component: fetchDataByAxiosComp } ,
+        { path: 'test_axios_filter', name: 'axiosApiWithFilter' , component: fetchData_FilterComp } ,
       ]
     },
     { path: '*', redirect: '/' } // 萬用路由(放最後)

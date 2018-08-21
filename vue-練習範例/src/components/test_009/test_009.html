@@ -1,0 +1,52 @@
+
+<section class="test-009">
+  <h1 class="title-font-style">Vue.js 2 ─ 似乎無法用filter達到【顯示筆數】、【查詢】</h1>
+  <p>(1) 若要簡單查詢，可另外訂一個Button對陣列進行篩選</p>
+  <p>(2) 若要設定每頁筆數，可用slice</p>
+
+  <hr>
+
+  <!-- <pre>{{ empDataListToShow }}</pre> -->
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">@篩選條件</span>
+    </div>
+    <input type="text" class="form-control" v-model="queryAgeLimit" placeholder="請輸入篩選條件(age)" @keyup="filterByAge( queryAgeLimit )"/>
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">@顯示筆數</span>
+    </div>
+    <input type="text" class="form-control" v-model="pageCount"/>
+  </div>
+
+  <table class="table table-hover" border="2">
+    <thead>
+      <tr class="table-danger">
+        <th scope="col">#</th>
+        <th scope="col">empName</th>
+        <th scope="col">empAge</th>
+        <th scope="col">empSex</th>
+        <th scope="col">picUrl</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Vue.js 2 似乎無法用filter達到【顯示筆數】、【查詢】 -->
+      <!-- (1) 若要簡單查詢，可另外訂一個Button對陣列進行篩選 -->
+      <!-- (2) 若要設定每頁筆數，可用slice -->
+      <tr v-for=" (item, _index) in empDataListToShow.slice(0, pageCount) ">
+        <th scope="row">{{ _index + 1 }}</th>
+        <td>{{ item.empName }}</td>
+        <td>{{ item.empAge }}</td>
+        <td>{{ item.empSex }}</td>
+        <td>
+          <img width="80" :src="item.picUrl" :alt="item.picUrl" v-bind:title="item.picUrl">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>
+

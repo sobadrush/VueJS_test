@@ -2,6 +2,10 @@
 <section class="home-page">
   <h1 :class="{'bgcolor-orange': true}">Home Page</h1>
 
+  <img src="static/assest/img/vue-logo.png"> <!-- 從static引用圖片 -->
+  <img src="@/assets/img/vue-logo.png"><!-- 從assets引用圖片 -->
+  <!-- <img src="@/assets/img/webpack打包vue.jpg"> --><!-- 從assets引用圖片 -->
+
   <h1 :class="{ 'title-font-style': true }">參考資料</h1>
   <table class="table table-hover" border="2" style="text-align:center">
     <thead>
@@ -12,6 +16,24 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>萬用路由</td>
+        <td style="text-align:left">
+            https://kknews.cc/tech/oblvkm.html
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">1</th>
+        <td>vue-cli3静态资源static assets项目结构</td>
+        <td style="text-align:left">
+            <ul>
+              <li>https://segmentfault.com/q/1010000009842688</li>
+              <li>https://segmentfault.com/a/1190000014456796</li>
+              <li>https://juejin.im/post/5a75c8ce5188257a624c9ff1</li>
+            </ul>
+        </td>
+      </tr>
       <tr>
         <th scope="row">1</th>
         <td>萬用路由</td>
@@ -35,12 +57,12 @@
       <tr>
         <th scope="row">3</th>
         <td>HTML5 history 模式下使用 base 选项</td>
-        <td>https://router.vuejs.org/zh/api/</td>
+        <td style="text-align:left">https://router.vuejs.org/zh/api/</td>
       </tr>
       <tr>
         <th scope="row">4</th>
         <td>Vue.js入門(小馬 Youtube)</td>
-        <td>https://www.youtube.com/watch?v=WabgjU4gELI&list=PLu3b11EPo_MfxhGAgO1LTJuDLTMCHIGLv</td>
+        <td  style="text-align:left">https://www.youtube.com/watch?v=WabgjU4gELI&list=PLu3b11EPo_MfxhGAgO1LTJuDLTMCHIGLv</td>
       </tr>
       <tr>
         <th scope="row">5</th>
@@ -107,6 +129,15 @@
         <td style="text-align:left">
             <ul>
               <li>https://blog.csdn.net/qinkaiyuan94/article/details/79159308</li>
+            </ul>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">13</th>
+        <td>[Components] 元件組合與溝通</td>
+        <td style="text-align:left">
+            <ul>
+              <li>https://ithelp.ithome.com.tw/articles/10196032</li>
             </ul>
         </td>
       </tr>

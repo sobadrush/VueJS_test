@@ -6,14 +6,16 @@ export default {
   data () {
     return {
       queryCityId : '1',
-      townsData: {}
+      townsData: {} ,
+      pageCount : 20 ,
     }
   },
   computed: {
 
   },
   mounted () {
-
+    // === init , 先查一次 ===
+    this.doFetchDataAxios( this.queryCityId );
   },
   methods: {
     clearData() {
@@ -53,7 +55,8 @@ export default {
         })
         .finally(() => {
           /* 不論成功失敗，都做些事 */
-          alert(`Completed!`)
+          // alert(`Completed!`)
+          console.log(`Completed!`)
         });
 
 

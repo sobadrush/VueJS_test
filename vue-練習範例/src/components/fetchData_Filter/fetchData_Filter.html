@@ -2,14 +2,26 @@
 <section class="fetch-data-filter">
   <h1 class="title-font-style">test-004 - fetchData_Filter Component</h1>
 
+  <p>Vue.js 2 ─ 似乎無法用filter達到【顯示筆數】、【查詢】</p>
+  <p>(1) 若要簡單查詢，可另外訂一個Button對陣列進行篩選</p>
+  <p>(2) 若要設定每頁筆數，可用slice</p>
+  <p>(3) 本例 mounted() 時，先查一次</p>
+
   <input type="text" style="text-align:center;" v-model="queryCityId">
-  <button type="button" class="btn btn-primary margin-around" @click="doFetchDataAxios(queryCityId)">
+  <button type="button" class="btn btn-primary margin-around" @click="doFetchDataAxios( queryCityId )">
     取得天氣預報 <b v-if="Object.keys(townsData).length != 0">( {{ townsData.name }} )</b>
   </button>
 
   <button type="button" class="btn btn-secondary margin-around" @click="clearData()">清除資料</button>
 
-  <table class="table table-sm" border="2">
+  <div class="input-group mb-3" style="width:10cm">
+    <div class="input-group-prepend">
+      <span class="input-group-text">顯示筆數(v-model) ( {{ pageCount }} ) </span>
+    </div>
+    <input type="text" class="form-control" style="text-align:center;" v-model="pageCount">
+  </div>
+
+  <table class="table table-sm" border="3">
       <thead>
         <tr class="table-danger">
           <th scope="col" style="width:2%">#</th>
@@ -20,7 +32,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(item , indexFuck) in townsData.towns" :key="item.cwb_id">
+        <tr v-for="(item , indexFuck) in (townsData.towns).slice(0, pageCount)" :key="item.cwb_id">
             <th scope="row">{{ indexFuck + 1 }}</th>
             <th scope="row">{{ item.cwb_id }}</th>
             <th scope="row">{{ item.name }}</th>

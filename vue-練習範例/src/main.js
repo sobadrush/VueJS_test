@@ -7,6 +7,8 @@ import router from './router'
 import myHeader from '@/components/myHeader/myHeader.vue';
 import mySideBar from '@/components/mySideBar/mySideBar.vue';
 
+import eventBus from './eventBus.js';
+
 import axios from 'axios'; // 使用Axios ... (1)
 
 // =-=-=-=-=-=-=-=-【全域註冊 ... Start】-=-=-=-=-=-=-=-=-=
@@ -25,25 +27,19 @@ Vue.filter("globalPrompt", function(val/*第一個參數是 pipe 傳入的值*/,
   return val + ' ' + arg1 + ', ' + arg2;
 });
 
-// Vue.filter('limitFilter', function(array, length) {
-//   console.log(array);
-//   return array;
-//   // var limitCount = parseInt(length, 10);
-//   // if (limitCount <= 0) {
-//   //     ("development") !== 'production' && _.warn(
-//   //         'The limit filter requires an argument defining the limit count.'
-//   //     );
-//   //     return array;
-//   // }
-//   // return array.slice(0, limitCount);
-// });
-// =-=-=-=-=-=-=-=-【全域註冊 ... End-=-=-=-=-=-=-=-=-=-=-=
+// =-=-=-=-=-=-=-=-【全域註冊 ... End】-=-=-=-=-=-=-=-=-=-=-=
 
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
+  data() {
+    return {
+      // Bind our event-bus to our $root Vue model
+      bus : eventBus
+    }
+  },
+  router, // 表示 router : router (ES6 屬性名稱與值相同可如此sugar)
   components: { App },
   template: '<App/>'
 })

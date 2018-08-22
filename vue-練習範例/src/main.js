@@ -16,6 +16,11 @@ Vue.prototype.$http = axios // 使用Axios ... (2)
 
 Vue.config.productionTip = false
 
+// 註冊全域共用function，組件js中可用 this.toJson(xxx) 呼叫
+Vue.prototype.toJson = function( _input ){
+  return JSON.stringify( _input );
+}
+
 Vue.component('app-header' , myHeader)
 Vue.component('app-sidebar' , mySideBar)
 
@@ -26,6 +31,9 @@ Vue.filter("globalPrompt", function(val/*第一個參數是 pipe 傳入的值*/,
   console.log('globalPrompt , arg2 >>> ' + arg2);
   return val + ' ' + arg1 + ', ' + arg2;
 });
+
+Vue.filter('toJson', val => { return JSON.stringify(val, null, 2) } );
+Vue.filter('fromJson', val => { return JSON.parse(val) } );
 
 // =-=-=-=-=-=-=-=-【全域註冊 ... End】-=-=-=-=-=-=-=-=-=-=-=
 

@@ -1,0 +1,67 @@
+<section class="test-010">
+  <h1>test-010 Component</h1>
+  <h1 class="title-font-style">watch ─ 監聽屬性</h1>
+
+  <hr>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <!-- ============================ -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">輸入薪水</span>
+          </div>
+          <input type="text" class="form-control" v-model="empSalary">
+        </div>
+        <!-- ============================ -->
+      </div>
+      <div class="col-6">
+        <h3 style="font-family:微軟正黑體;" :style="myStyle">{{ message }}</h3>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h4>員工資料( deep-watch )</h4>
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <!-- ============================ -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">員工姓名</span>
+          </div>
+          <input type="text" class="form-control" v-model="empData.empName">
+        </div>
+        <!-- ============================ -->
+      </div>
+      <div class="col-4">
+        <!-- ============================ -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">員工年齡</span>
+          </div>
+          <input type="text" class="form-control" v-model="empData.empAge">
+        </div>
+        <!-- ============================ -->
+      </div>
+      <div class="col-4">
+        <!-- ============================ -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">職銜</span>
+          </div>
+          <input type="text" class="form-control" v-model="empData.empTitle">
+        </div>
+        <!-- ============================ -->
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-family:微軟正黑體;" :style="{'color':'lightgreen'}">{{ message2 }}</h3>
+
+
+</section>

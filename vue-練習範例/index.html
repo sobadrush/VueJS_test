@@ -51,7 +51,21 @@
                 $('.collapse.in').toggleClass('in');
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
             });
+
+
+            // ===== test002 用的 =====
+            let myInput1 = document.querySelector('#myInput1');
+            myInput1.addEventListener("keyup" , function(e){
+              console.log( 'this = ' , this );
+              console.log( 'key in value = ' , this.value );
+              let text = this.value;
+
+              let mySpan = $(this).next()[0];
+              console.log('mySpan >>> ', mySpan);
+              mySpan.innerText = text;
+            });
         });
+
     </script>
   </body>
 </html>

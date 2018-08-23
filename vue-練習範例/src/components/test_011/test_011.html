@@ -1,0 +1,77 @@
+<section class="test-011">
+  <h1 class="title-font-style">test-011 Component , Vue ─ 生命週期</h1>
+
+  <hr>
+  <h4>參考資料</h4>
+  <p>https://ithelp.ithome.com.tw/articles/10188213</p>
+  <p>https://segmentfault.com/a/1190000008010666</p>
+  <hr>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">單向綁定的資料 myMessage </span>
+    </div>
+    <h2 style="margin-left:10px;border:1px solid blue;">{{ myMessage }}</h2>
+  </div>
+
+  <hr>
+  <div class="list-group">
+    <a href="javascript:void(0)" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">beforecreated</h5>
+      </div>
+      <p class="mb-1">el 和 data 均尚未初始化</p>
+      <p class="mb-1 my-active">可以在這加個 loading 事件 (轉圈圈..etc) </p>
+    </a>
+    <a href="javascript:void(0)" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">created</h5>
+      </div>
+      <p class="mb-1">完成了 data 數據的初始化，element沒有</p>
+      <p class="mb-1 my-active">在這结束loading，可作一些初始化，實現函數自動執行</p>
+    </a>
+    <a href="javascript:void(0)" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">beforeMount</h5>
+      </div>
+      <p class="mb-1">完成element及data的初始化</p>
+    </a>
+    <a href="javascript:void(0)" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">mounted</h5>
+      </div>
+      <p class="mb-1">完成data掛載到element上</p>
+    </a>
+    <a href="javascript:void(0)" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">beforeUpdate</h5>
+      </div>
+      <p class="mb-1">TBD</p>
+    </a>
+    <a href="javascript:void(0)" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">updated</h5>
+      </div>
+      <p class="mb-1">TBD</p>
+    </a>
+    <a href="javascript:void(0)" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">beforeDestroy</h5>
+      </div>
+      <p class="mb-1">console中下，$vm.$destroy()，可觸發</p>
+      <p class="mb-1 my-active">你確認删除XX吗？</p>
+    </a>
+    <a href="javascript:void(0)" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">destroyed</h5>
+      </div>
+      <p class="mb-1">console中下，$vm.$destroy()，可觸發</p>
+      <p class="mb-1">原先生成的DOM還存在，可以這麼理解，執行了destroy操作，後續就不再受vue控制了</p>
+      <p class="mb-1 my-active">當前組件已被删除，清空相關内容</p>
+    </a>
+  </div>
+
+  <img class="margin-around my-border" src="static/assest/img/生命週期示範.png" alt="" srcset="">
+  <img class="margin-around my-border" width="500px" src="static/assest/img/Vue生命週期.png" alt="" srcset="">
+
+</section>

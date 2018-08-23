@@ -55,15 +55,19 @@
 
             // ===== test002 用的 =====
             let myInput1 = document.querySelector('#myInput1');
-            myInput1.addEventListener("keyup" , function(e){
-              console.log( 'this = ' , this );
-              console.log( 'key in value = ' , this.value );
-              let text = this.value;
 
-              let mySpan = $(this).next()[0];
-              console.log('mySpan >>> ', mySpan);
-              mySpan.innerText = text;
-            });
+            if (myInput1) { // 當建立test002元件，有myInput1時，才註冊此事件
+              myInput1.addEventListener("keyup" , function(e){
+                console.log( 'this = ' , this );
+                console.log( 'key in value = ' , this.value );
+                let text = this.value;
+
+                let mySpan = $(this).next()[0];
+                console.log('mySpan >>> ', mySpan);
+                mySpan.innerText = text;
+              });
+            }
+
         });
 
     </script>

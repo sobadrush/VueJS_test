@@ -11,7 +11,7 @@
         </router-link>
 
         <li class="active">
-            <a href="#practice1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">練習區1</a>
+            <a href="#practice1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">練習區 1</a>
             <ul class="collapse list-unstyled" id="practice1">
                 <li>
                     <!-- <a href="#">Home 1</a> -->
@@ -77,7 +77,7 @@
         </li>
 
         <li>
-            <a href="#practice2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">練習區2</a>
+            <a href="#practice2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">練習區 2</a>
             <ul class="collapse list-unstyled" id="practice2">
                 <li>
                     <!-- 命名路由 ─ 直接指定到children路由上 -->
@@ -103,8 +103,69 @@
                        axios取資料 - filter - limitTo
                     </router-link>
                 </li>
+
             </ul>
         </li>
+
+        <li>
+            <a href="#practice3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">練習區 3</a>
+            <ul class="collapse list-unstyled" id="practice3">
+
+                <li>
+                    <!-- 命名路由 ─ 直接指定到children路由上 -->
+                    <router-link tag="a" :to="{ name : 'axiosApiRouterParam' ,  params: { queryCityId : '9' , empId: '30678', empName: 'Roger' , functionName : 'axios取資料 + PATH 路由參數' } }">
+                       axios取資料 + PATH 路由參數
+                    </router-link>
+                </li>
+
+                <!-- (1)直接用 router-link Render出 li + <a>  (2) 用 :to -->
+                <router-link tag="li" :to="{ name : 'axiosApiRouterParam' ,  query: { queryCityId : '11' , deptId : 7788 , deptName : '國防部' , functionName : 'axios取資料 + query 路由參數' } }">
+                  <a href="javascript:void(0)"> axios取資料 + query 路由參數 </a>
+                </router-link>
+
+                <li>
+                  <!-- (帶參數寫法 (A)) -->
+                  <router-link tag="a" :to="{ path :'/practice3/test_axios_router_props/2/5566/LeBron/axios取資料 + PATH 路由參數 + props(帶參數寫法 (A))'}">
+                    axios取資料 + PATH 路由參數 + props(帶參數寫法 (A))
+                  </router-link>
+                </li>
+
+                <li>
+                  <!-- (帶參數寫法 (B)) -->
+                  <router-link tag="a" :to="{ name : 'axiosApiRouterParamProps' ,  params: { myQueryCityId : '3' , empId: '5566', empName: 'LeBron' , functionName : 'axios取資料 + PATH 路由參數 + props(帶參數寫法 (B))' } }">
+                    axios取資料 + PATH 路由參數 + props(帶參數寫法 (B))
+                  </router-link>
+                </li>
+
+                <li>
+                  <!-- (帶參數寫法 (C)) -->
+                  <router-link tag="a" to="/practice3/test_axios_router_props/4/9999/Kobe/axios取資料 + PATH 路由參數 + props(帶參數寫法 (C))">
+                    axios取資料 + PATH 路由參數 + props(帶參數寫法 (C))
+                  </router-link>
+                </li>
+
+                <li>
+                  <!-- (帶參數寫法 (D)) -->
+                  <router-link tag="a" :to="{ path : '/practice3/test_axios_router_props/5/55688/Iverson/axios取資料 + PATH 路由參數 + props(帶參數寫法 (D))' }">
+                    axios取資料 + PATH 路由參數 + props(帶參數寫法 (D))
+                  </router-link>
+                </li>
+
+                <li>
+                  <router-link tag="a" :to="{ name : 'axiosApiRouterParamProps' ,  query: { myQueryCityId : '6' , deptId: '5566', deptName: '內政部' , functionName : 'axios取資料 + query 路由參數' } }">
+                    axios取資料 + query 路由參數 + props
+                  </router-link>
+                </li>
+
+                <li>
+                  <router-link tag="a" to="/practice3/test_axios_router_props?myQueryCityId=7&deptId=9999&deptName=交通部&functionName=axios取資料 + PATH 路由參數(直接串queryString)">
+                    axios取資料 + query 路由參數 + props ( ? 直接串queryString )
+                  </router-link>
+                </li>
+
+            </ul>
+        </li>
+
 
         <li>
             <a href="#">About</a>

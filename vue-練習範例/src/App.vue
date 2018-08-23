@@ -42,6 +42,9 @@
   import fetchDataByJqueryAjaxComp from '@/components/fetchDataByJqueryAjax/fetchDataByJqueryAjax.vue';
   import fetchDataByEs6FetchAPIComp from '@/components/fetchDataByEs6FetchAPI/fetchDataByEs6FetchAPI.vue';
   import fetchDataByAxiosComp from '@/components/fetchDataByAxios/fetchDataByAxios.vue';
+  import practice3Comp from '@/components/practice3/practice3.vue';
+  import fetchDataByAxiosRouterParamComp from '@/components/fetchDataByAxiosRouterParam/fetchDataByAxiosRouterParam.vue';
+  import fetchDataByAxiosRouterParamPropsComp from '@/components/fetchDataByAxiosRouterParamProps/fetchDataByAxiosRouterParamProps.vue';
 
   export default {
     name: 'App',
@@ -62,6 +65,9 @@
       fetchDataByJqueryAjaxComp,
       fetchDataByEs6FetchAPIComp,
       fetchDataByAxiosComp,
+      practice3Comp,
+      fetchDataByAxiosRouterParamComp,
+      fetchDataByAxiosRouterParamPropsComp,
     },
   }
 </script>

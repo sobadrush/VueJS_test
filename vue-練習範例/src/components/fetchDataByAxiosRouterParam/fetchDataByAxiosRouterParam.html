@@ -1,0 +1,108 @@
+
+<section class="fetch-data-by-axios">
+  <h1 class="title-font-style">test-005 - 測試 Vue 推薦 axios API + 路由參數</h1>
+  <h2 class="myTitle">functionName = {{ this.$route.params.functionName }}</h2>
+  <h2 class="myTitle">functionName = {{ this.$route.query.functionName }}</h2>
+
+  <hr>
+  <ul>
+    <li>原本在組件內調用params要用 this.$route.params，會造成此組件只能在router之下使用，設成 props 之後能讓此組件不管是否用router都可使用</li>
+    <li>在 src/router/index.js , 加上 props: true</li>
+    <li>如果 props 被设置为 true，route.params 将会被设置为组件属性</li>
+    <li>有 path路由參數 / query路由參數 ─ 兩種形式</li>
+  </ul>
+
+  <hr>
+
+  <h4>path 路由參數 ─ 必須在index.js中有 :empId 這樣的定義</h4>
+  <table class="table table-sm" border="3">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">path 路由參數 key</th>
+        <th scope="col">path 路由參數 value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>this.$route.params.queryCityId</td>
+        <td class="emphasis">{{ this.$route.params.queryCityId }}</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>this.$route.params.empId</td>
+        <td class="emphasis">{{ this.$route.params.empId }}</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>this.$route.params.empName</td>
+        <td class="emphasis">{{ this.$route.params.empName }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>query 路由參數 ─ 不必在index.js中有定義</h4>
+  <table class="table table-sm" border="3">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">query 路由參數 key</th>
+        <th scope="col">query 路由參數 value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>this.$route.query.queryCityId</td>
+        <td class="emphasis">{{ this.$route.query.queryCityId }}</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>this.$route.query.deptId</td>
+        <td class="emphasis">{{ this.$route.query.deptId }}</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>this.$route.query.deptName</td>
+        <td class="emphasis">{{ this.$route.query.deptName }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr><hr>
+
+  <input type="text" style="text-align:center;" v-model="queryCityId">
+  <button type="button" class="btn btn-primary margin-around" @click="doFetchDataAxios(queryCityId)">
+    取得天氣預報 <b v-if="Object.keys(townsData).length != 0">( {{ townsData.name }} )</b>
+  </button>
+
+  <button type="button" class="btn btn-secondary margin-around" @click="clearData()">清除資料</button>
+
+  <table class="table table-sm" border="2">
+      <thead>
+        <tr class="table-danger">
+          <th scope="col" style="width:2%">#</th>
+          <th scope="col">cwb_id</th>
+          <th scope="col">區名</th>
+          <th scope="col">經度</th>
+          <th scope="col">緯度</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(item , indexFuck) in townsData.towns" :key="item.cwb_id">
+            <th scope="row">{{ indexFuck + 1 }}</th>
+            <th scope="row">{{ item.cwb_id }}</th>
+            <th scope="row">{{ item.name }}</th>
+            <th scope="row">{{ item.position.lat }}</th>
+            <th scope="row">{{ item.position.lng }}</th>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- <pre>
+        {{ this.townsData }}
+    </pre> -->
+
+</section>
+

@@ -1,0 +1,24 @@
+
+<section class="fight-001">
+  <h1 class="title-font-style">fight-001 Component - 查資料成功後導頁</h1>
+  <hr><hr><hr>
+
+  <h3>查詢目標：<b style="color:red;">{{ targetCity }}</b></h3>
+  <div class="input-group mb-3" style="width: 7cm;">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">輸入CityId</span>
+    </div>
+    <input type="text" class="form-control" style="text-align: center;" v-model="queryCityId">
+    <h2 style="margin-left: 1cm">{{ queryCityId }}</h2>
+  </div>
+
+  <button type="button" class="btn btn-primary" @click.prevent="fetchTownsData( queryCityId )">查詢</button>
+  <h3>查詢結果：<b style="color:red;">{{ townsData.name }}</b></h3>
+
+  <br>
+  <pre>
+    {{ townsData }}
+  </pre>
+
+</section>
+

@@ -24,6 +24,8 @@ import fetchDataByAxiosComp from '@/components/fetchDataByAxios/fetchDataByAxios
 import fetchData_FilterComp from '@/components/fetchData_Filter/fetchData_Filter.vue';
 import fetchDataByAxiosRouterParamComp from '@/components/fetchDataByAxiosRouterParam/fetchDataByAxiosRouterParam.vue';
 import fetchDataByAxiosRouterParamPropsComp from '@/components/fetchDataByAxiosRouterParamProps/fetchDataByAxiosRouterParamProps.vue';
+import practice9Comp from '@/components/practice9/practice9.vue';
+import fight001Comp from '@/components/fight001/fight001.vue';
 
 Vue.use(Router)
 
@@ -81,6 +83,16 @@ const router = new Router({
           name: 'axiosApiRouterParamProps' ,
           component: fetchDataByAxiosRouterParamPropsComp ,
           props : true, // 如果 props 被设置为 true，route.params 將會被設置為組鍵自身的屬性
+        } ,
+      ]
+    },
+    {
+      path: '/practice9' , name : 'practice9' , component : practice9Comp ,
+      children : [ // 子路由(嵌套路由) , 以下的組件，會被渲染到 parctice2 組件中的 <router-view>
+        {
+          path: 'toFight001',
+          name: 'goFight001' ,
+          component: fight001Comp ,
         } ,
       ]
     },

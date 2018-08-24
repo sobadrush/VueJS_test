@@ -1,0 +1,41 @@
+<section class="test-012">
+  <h1 class="title-font-style">test-012 Component - 測試 v-for </h1>
+
+<!-- {{ empDataList }} -->
+
+  <table class="table" border="4">
+    <thead class="table-primary">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">empName</th>
+        <th scope="col">empAge</th>
+        <th scope="col">empSex</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(item , $myIndex) in empDataList" track-by="$myIndex"
+        :class="{
+          'my-odd-style' : $myIndex % 2 == 1 ,
+          'my-even-style' : $myIndex % 2 == 0 ,
+          'table-danger' : selectedIndex == $myIndex ,
+        }"
+        @mouseover="doMouseOver( $myIndex )">
+        <th scope="row">{{ $myIndex + 1 }}</th>
+        <td>{{ item.empName }}</td>
+        <td>{{ item['empAge'] }}</td>
+        <td>{{ item['empSex'] }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr><hr><hr>
+
+  <div style="border:2px solid gray; width:600px; text-align: center">
+    <img :src="item" width="200" style="border:1px solid black; margin:10px;"
+          v-for="(item, $myIndex) in picBase64Array"
+          :style="{'border': (selectedIndex2 == $myIndex ? '3px solid red' : '1px solid black') }"
+          @click="doClick( $myIndex )"
+    >
+  </div>
+
+</section>

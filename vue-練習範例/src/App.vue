@@ -38,6 +38,7 @@
   import test_009Comp from '@/components/test_009/test_009.vue';
   import test_010Comp from '@/components/test_010/test_010.vue';
   import test_011Comp from '@/components/test_011/test_011.vue';
+  import test_012Comp from '@/components/test_012/test_012.vue';
   import practice2Comp from '@/components/practice2/practice2.vue';
   import fetchDataByJqueryAjaxComp from '@/components/fetchDataByJqueryAjax/fetchDataByJqueryAjax.vue';
   import fetchDataByEs6FetchAPIComp from '@/components/fetchDataByEs6FetchAPI/fetchDataByEs6FetchAPI.vue';
@@ -61,6 +62,7 @@
       test_009Comp,
       test_010Comp,
       test_011Comp,
+      test_012Comp,
       practice2Comp,
       fetchDataByJqueryAjaxComp,
       fetchDataByEs6FetchAPIComp,

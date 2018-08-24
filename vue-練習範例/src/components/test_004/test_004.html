@@ -6,13 +6,15 @@
 
   <app-test004-child v-bind:dataFromParent="'幹你娘'"></app-test004-child>
 
+<hr><hr><hr>
+
   seasonArray = {{ seasonArray }}
   <!-- <app-test004-child v-for="(item, index) in seasonArray" :key="index" :perSeason="item" :idx="index"></app-test004-child> -->
 
   <!-- <app-test004-child v-for="(item, index) in seasonArray" :key="index" v-bind="perSeason" :idx="index"></app-test004-child> -->
 
   <app-test004-child v-for="(item, index) in seasonArray" :key="index"
-        v-bind:perSeason_name="item.name" :perSeason_color="item.color" :idx="index"></app-test004-child>
+       :perSeason="item" v-bind:perSeason_name="item.name" :perSeason_color="item.color" :idx="index"></app-test004-child>
 
   <hr>
   <img src="static/assest/img/父傳子props.png" style="border:black 2px solid" >

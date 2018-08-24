@@ -4,7 +4,8 @@ export default {
   props: [],
   data () {
     return {
-      isShowing : true ,
+      vIf_flag : true ,
+      vShow_flag : true ,
       games : [
         { 'gameName' : '刺客教條'   , 'price' : '3520' },
         { 'gameName' : '龍珠超宇宙' , 'price' : '2200' },
@@ -21,9 +22,13 @@ export default {
 
   },
   methods: {
-    doShowAll( _$event ) {
+    doShowAllByVif( _$event ) {
       console.log( '_$event >>> ' , _$event );
-      this.isShowing = !this.isShowing;
-    }
+      this.vIf_flag = !this.vIf_flag;
+    },
+    doShowAllByVshow: function( _$event ) {
+      console.log( '_$event >>> ' , _$event );
+      this.vShow_flag = !this.vShow_flag;
+    },
   }
 }

@@ -15,6 +15,7 @@ import test_009Comp from '@/components/test_009/test_009.vue';
 import test_010Comp from '@/components/test_010/test_010.vue';
 import test_011Comp from '@/components/test_011/test_011.vue';
 import test_012Comp from '@/components/test_012/test_012.vue';
+import test_013Comp from '@/components/test_013/test_013.vue';
 import practice2Comp from '@/components/practice2/practice2.vue';
 import practice3Comp from '@/components/practice3/practice3.vue';
 import fetchDataByJqueryAjaxComp from '@/components/fetchDataByJqueryAjax/fetchDataByJqueryAjax.vue';
@@ -55,6 +56,7 @@ const router = new Router({
         { path: 'test010', name : 'test010Fuck' , component: test_010Comp } ,
         { path: 'test011', name : 'test011Fuck' , component: test_011Comp } ,
         { path: 'test012', name : 'test012Fuck' , component: test_012Comp } ,
+        { path: 'test013', name : 'test013Fuck' , component: test_013Comp } ,
       ]
     },
     {

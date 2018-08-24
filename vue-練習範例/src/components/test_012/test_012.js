@@ -14,7 +14,7 @@ export default {
   },
   mounted () {
 
-  },
+  },//
   methods: {
     doMouseOver( _selectedIndex ) {
       console.log(`doMouseOver , _selectedIndex = ${_selectedIndex}`);

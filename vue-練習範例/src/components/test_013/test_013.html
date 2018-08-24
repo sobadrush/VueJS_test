@@ -1,0 +1,21 @@
+
+<section class="test-013">
+  <h1 class="title-font-style">test-013 Component - 雙向綁定 + 圖片旋轉 </h1>
+
+  <hr>
+
+  <input type="range" min="0" max="270" step="1" style="width:300px; margin:0.5cm;" v-model="rotDegree"/>
+  <input type="text" style="text-align:center" v-model="rotDegree">
+  <br>
+  <br>
+  <br>
+  <img :src="myImg.imgPath" title="myImg.imgName" class="my-style" width="500"
+      :style="{
+        'transform':'rotate(' + rotDegree + 'deg)',
+        '-webkit-transform':'rotate(' + rotDegree + 'deg)',
+        '-ms-transform':'rotate(' + rotDegree + 'deg)'
+      }"
+  >
+
+</section>
+

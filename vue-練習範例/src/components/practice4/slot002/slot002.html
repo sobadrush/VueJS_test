@@ -1,0 +1,19 @@
+<section class="slot-002">
+  <h1 class="title-font-style">slot-002 Component - Named Slot (具名slot) </h1>
+  <hr><hr><hr>
+  <p>匿名插槽没有name属性，所以是匿名插槽，那么，插槽加了name属性，就变成了具名插槽。具名插槽可以在一个组件中出现N次。出现在不同的位置。</p>
+  <hr><hr><hr>
+
+  <my-child></my-child>
+
+  <my-child>
+    <!-- 用名稱mapping，順序不重要 -->
+    <h1 slot="header">幹幹幹header</h1>
+    <h1 slot="footer">幹幹幹footer</h1>
+
+    <!-- 會被放到匿名slot中 -->
+    <p>XXXXX</p>
+    <p>OOOOO</p>
+  </my-child>
+
+</section>

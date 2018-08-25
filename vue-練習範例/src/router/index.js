@@ -20,6 +20,10 @@ import practice2Comp from '@/components/practice2/practice2.vue';
 import practice3Comp from '@/components/practice3/practice3.vue';
 import fetchDataByJqueryAjaxComp from '@/components/fetchDataByJqueryAjax/fetchDataByJqueryAjax.vue';
 import fetchDataByEs6FetchAPIComp from '@/components/fetchDataByEs6FetchAPI/fetchDataByEs6FetchAPI.vue';
+import practice4Comp from '@/components/practice4/practice4.vue';
+import slot001Comp from '@/components/practice4/slot001/slot001.vue';
+import slot002Comp from '@/components/practice4/slot002/slot002.vue';
+import slot003Comp from '@/components/practice4/slot003/slot003.vue';
 import fetchDataByAxiosComp from '@/components/fetchDataByAxios/fetchDataByAxios.vue';
 import fetchData_FilterComp from '@/components/fetchData_Filter/fetchData_Filter.vue';
 import fetchDataByAxiosRouterParamComp from '@/components/fetchDataByAxiosRouterParam/fetchDataByAxiosRouterParam.vue';
@@ -72,7 +76,7 @@ const router = new Router({
     },
     {
       path: '/practice3' , name : 'practice3' , component : practice3Comp ,
-      children : [ // 子路由(嵌套路由) , 以下的組件，會被渲染到 parctice2 組件中的 <router-view>
+      children : [ // 子路由(嵌套路由) , 以下的組件，會被渲染到 parctice3 組件中的 <router-view>
         {
           path: 'test_axios_router/:queryCityId?/:empId?/:empName?',
           name: 'axiosApiRouterParam' ,
@@ -83,6 +87,26 @@ const router = new Router({
           name: 'axiosApiRouterParamProps' ,
           component: fetchDataByAxiosRouterParamPropsComp ,
           props : true, // 如果 props 被设置为 true，route.params 將會被設置為組鍵自身的屬性
+        } ,
+      ]
+    },
+    {
+      path: '/practice4' , name : 'practice4' , component : practice4Comp ,
+      children : [ // 子路由(嵌套路由) , 以下的組件，會被渲染到 parctice4 組件中的 <router-view>
+        {
+          path: 'toSlot001',
+          name: 'goSlot001' ,
+          component: slot001Comp ,
+        } ,
+        {
+          path: 'toSlot002',
+          name: 'goSlot002' ,
+          component: slot002Comp ,
+        } ,
+        {
+          path: 'toSlot003',
+          name: 'goSlot003' ,
+          component: slot003Comp ,
         } ,
       ]
     },

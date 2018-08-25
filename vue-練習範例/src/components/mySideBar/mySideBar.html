@@ -83,6 +83,7 @@
                 <router-link :to="{ path : `/practice/test011` }" tag="li">
                   <a href="javascript:void(0)">vue - 生命週期函數</a>
                 </router-link>
+
             </ul>
         </li>
 
@@ -173,6 +174,27 @@
                   </router-link>
                 </li>
 
+            </ul>
+        </li>
+
+        <li>
+            <a href="#practice4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">練習區 4</a>
+            <ul class="collapse list-unstyled" id="practice4">
+                <li>
+                    <router-link :to="{ path : '/practice4/toSlot001' }" tag="a">
+                      Single Slot 匿名插槽
+                    </router-link>
+                </li>
+                <li>
+                    <router-link :to="{ path : '/practice4/toSlot002' }" tag="a">
+                      Named Slot 具名插槽
+                    </router-link>
+                </li>
+                <li>
+                    <router-link :to="{ name : 'goSlot003' }" tag="a">
+                      Scoped Slot 作用域插槽
+                    </router-link>
+                </li>
             </ul>
         </li>
 

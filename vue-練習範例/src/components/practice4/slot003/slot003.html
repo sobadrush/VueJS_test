@@ -1,0 +1,49 @@
+
+<section class="slot-003">
+  <h1 class="title-font-style">slot-003 Component - Scoped Slot (作用域插槽) </h1>
+  <hr><hr><hr>
+  <p>作用域插槽简单来说就是父组件只管显示样式，数据由子组件来提供。</p>
+  <p>作用域插槽較常用於 list 元件的實作上</p>
+  <hr><hr><hr>
+
+  <my-child></my-child>
+
+  <my-child :myItems="myGames">
+    <template slot="fuckSlot" slot-scope="props">
+      {{ props }}
+    </template>
+  </my-child>
+
+  <my-child :myItems="myGames">
+    <h1 slot="titleSlot" style="color:blue;font-family:微軟正黑體">具名插槽 + 作用域插槽</h1>
+    <template slot="fuckSlot" slot-scope="props">
+      {{ props }}
+    </template>
+  </my-child>
+
+  <my-child :myItems="myGames">
+    <h1 slot="titleSlot" style="color:blue;font-family:微軟正黑體">具名插槽 + 作用域插槽 (slot-scope="XXX" ， XXX可隨意取名 ， 不一定要叫 props)</h1>
+    <template slot="fuckSlot" slot-scope="GGG"><!-- slot-scope="XXX" ， XXX可隨意取名 ， 不一定要叫 props -->
+      {{ GGG }}
+    </template>
+  </my-child>
+
+  <hr>
+  <hr>
+  <hr>
+
+  <ul>
+    <li> <p>父組件透過子組件的props['myItems']，注入父組件中定義的myGames資料</p> </li>
+    <li> <p>子組件用v-for渲染myItems，並透過 v-bind 將資料綁在 slot 上 </p> </li>
+    <li> <p>父組件中，可透過 slot-scope="xxx" , 利用 xxx.屬姓名 取得子組件slot中的資料，在父組件中使用</p> </li>
+  </ul>
+
+  <my-child :myItems="myGames">
+    <h1 slot="titleSlot" style="color:blue;font-family:微軟正黑體">具名插槽 + 作用域插槽(list 元件的實作)</h1>
+    <template slot="fuckSlot" slot-scope="props">
+      <li>gameId: {{ props.gameIdXXX }}, gameName: {{ props.gameNameOOO }}</li>
+    </template>
+  </my-child>
+
+</section>
+

@@ -1,0 +1,35 @@
+<section class="slot-001">
+  <h1 class="title-font-style">slot-001 Component - Single Slot (匿名slot) </h1>
+  <hr><hr><hr>
+  <p>单个插槽可以放置在组件的任意位置，但是就像它的名字一样，一个组件中只能有一个该类插槽。相对应的，具名插槽就可以有很多个，只要名字（name属性）不同就可以了。</p>
+  <p>理解：可由父層傳入資料控制子元件要render出來的樣子</p>
+  <hr><hr><hr>
+  <my-child>
+    幹你娘
+  </my-child>
+
+  <my-child></my-child>
+
+  <my-child>
+    <template slot-scope="props">
+      {{ props }}
+    </template>
+  </my-child>
+
+  <my-child>
+    <template slot-scope="whatever">
+      {{ whatever }}
+    </template>
+  </my-child>
+
+  <hr>
+
+  <p>正因为作用域插槽绑定了一套数据，父组件可以拿来用。于是，情况就变成了这样：样式父组件说了算，但内容可以显示子组件插槽绑定的。</p>
+  <p>(https://juejin.im/post/5a69ece0f265da3e5a5777ed)</p>
+  <my-child>
+    <template slot-scope="props">
+      <button class="btn margin-around" :class="item.className" v-for="item in props.testBtnArray">{{ item.name }}</button>
+    </template>
+  </my-child>
+
+</section>

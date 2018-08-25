@@ -47,6 +47,7 @@
   import practice3Comp from '@/components/practice3/practice3.vue';
   import fetchDataByAxiosRouterParamComp from '@/components/fetchDataByAxiosRouterParam/fetchDataByAxiosRouterParam.vue';
   import fetchDataByAxiosRouterParamPropsComp from '@/components/fetchDataByAxiosRouterParamProps/fetchDataByAxiosRouterParamProps.vue';
+  import practice4Comp from '@/components/practice4/practice4.vue';
   //--------
   import practice9Comp from '@/components/practice9/practice9.vue';
 
@@ -74,6 +75,7 @@
       practice3Comp,
       fetchDataByAxiosRouterParamComp,
       fetchDataByAxiosRouterParamPropsComp,
+      practice4Comp, // slot 相關
       practice9Comp, // practice9Comp 下的子路由元件 → 在 practice9Comp 中注入 , fight001
     },
   }

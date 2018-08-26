@@ -13,6 +13,9 @@
   </div>
 
   <button type="button" class="btn btn-primary" @click.prevent="fetchTownsData( queryCityId )">查詢</button>
+
+  <b v-show="isQueryMatch">網頁即將在 <span v-bind:class="{ 'my-font' : true }"> {{ countSecond }} </span> 秒後跳轉！</b>
+
   <h3>查詢結果：<b style="color:red;">{{ townsData.name }}</b></h3>
 
   <br>

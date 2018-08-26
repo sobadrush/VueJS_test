@@ -9,6 +9,8 @@ export default {
       targetCity : '基隆' ,
       queryCityId: undefined,
       townsData: '',
+      countSecond: +3, // 跳轉秒數
+      isQueryMatch : false , // 查詢正確/錯誤
     }
   },
   computed: {
@@ -23,7 +25,14 @@ export default {
         console.log('newVal.name >>> ' , newVal.name);
 
         if (newVal.name == this.targetCity) {
-          alert(' >>> 查詢結果與目標相等，3秒後導回首頁 <<< ');
+          this.isQueryMatch = true; // 控制 v-show
+
+          alert( `>>> 查詢結果與目標相等，${this.countSecond} 秒後導回首頁 <<<` );
+
+          let countTimer = setInterval(() => {
+             console.log(`%c%s`, 'color:orange' , `剩 ${this.countSecond--} 秒跳轉`);
+          }, 1000);
+
           setTimeout(() => {
             // === 編程式路由 ... (1) ===
             // this.$router.push('/HomePage');
@@ -49,7 +58,10 @@ export default {
             //   name: 'HomePage' , params : { 'msg001' : '操你媽' }
             // });
 
-          }, 3000);
+            //------------------------------
+            window.clearInterval(countTimer); // 清除倒數計時timer
+            //------------------------------
+          }, 3000 + 1000/*tune秒數*/);
         }
 
       },

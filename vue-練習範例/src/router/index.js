@@ -39,13 +39,10 @@ const router = new Router({
   mode:'hash',
   routes: [
     {
-      path: '/',
-      redirect: 'HomePage'
+      path: '/', redirect: '/HomePage'
     },
     {
-      path: '/HomePage',
-      name: 'HomePage',
-      component: HomePageComp
+      path: '/HomePage', name: 'HomePage', component: HomePageComp
     },
     {
       path: '/practice' , component : practiceComp ,
@@ -93,34 +90,18 @@ const router = new Router({
     {
       path: '/practice4' , name : 'practice4' , component : practice4Comp ,
       children : [ // 子路由(嵌套路由) , 以下的組件，會被渲染到 parctice4 組件中的 <router-view>
-        {
-          path: 'toSlot001',
-          name: 'goSlot001' ,
-          component: slot001Comp ,
-        } ,
-        {
-          path: 'toSlot002',
-          name: 'goSlot002' ,
-          component: slot002Comp ,
-        } ,
-        {
-          path: 'toSlot003',
-          name: 'goSlot003' ,
-          component: slot003Comp ,
-        } ,
+        { path: 'toSlot001', name: 'goSlot001', component: slot001Comp } ,
+        { path: 'toSlot002', name: 'goSlot002', component: slot002Comp } ,
+        { path: 'toSlot003', name: 'goSlot003', component: slot003Comp } ,
       ]
     },
     {
       path: '/practice9' , name : 'practice9' , component : practice9Comp ,
       children : [ // 子路由(嵌套路由) , 以下的組件，會被渲染到 parctice2 組件中的 <router-view>
-        {
-          path: 'toFight001',
-          name: 'goFight001' ,
-          component: fight001Comp ,
-        } ,
+        { path: 'toFight001', name: 'goFight001', component: fight001Comp } ,
       ]
     },
-    { path: '*', redirect: '/' } // 萬用路由(放最後)
+    { path: '*', redirect: '/' } // 萬用路由(放最後)，以上路由樹都匹配不到時，會進入萬用路由
   ]
 })
 

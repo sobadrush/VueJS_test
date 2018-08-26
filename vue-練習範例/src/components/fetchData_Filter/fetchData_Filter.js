@@ -20,7 +20,7 @@ export default {
   methods: {
     clearData() {
       console.log(`======== clearData =======`);
-      this.townsData = {};
+      this.townsData = { towns : [] }; // 在其中先塞好 towns 為 [] ，避免 slice時 undefined
     },
     doFetchDataAxios( _cityId ) {
 

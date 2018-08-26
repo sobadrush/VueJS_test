@@ -5,7 +5,7 @@
   <p>Vue.js 2 ─ 似乎無法用filter達到【顯示筆數】、【查詢】</p>
   <p>(1) 若要簡單查詢，可另外訂一個Button對陣列進行篩選</p>
   <p>(2) 若要設定每頁筆數，可用slice</p>
-  <p>(3) 本例 mounted() 時，先查一次</p>
+  <p style="color:red">(3) 本例 mounted() 時，先查一次</p>
 
   <input type="text" style="text-align:center;" v-model="queryCityId">
   <button type="button" class="btn btn-primary margin-around" @click="doFetchDataAxios( queryCityId )">

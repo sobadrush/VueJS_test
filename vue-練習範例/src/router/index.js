@@ -24,12 +24,14 @@ import practice4Comp from '@/components/practice4/practice4.vue';
 import slot001Comp from '@/components/practice4/slot001/slot001.vue';
 import slot002Comp from '@/components/practice4/slot002/slot002.vue';
 import slot003Comp from '@/components/practice4/slot003/slot003.vue';
+import practice5Comp from '@/components/practice5/practice5.vue';
 import fetchDataByAxiosComp from '@/components/fetchDataByAxios/fetchDataByAxios.vue';
 import fetchData_FilterComp from '@/components/fetchData_Filter/fetchData_Filter.vue';
 import fetchDataByAxiosRouterParamComp from '@/components/fetchDataByAxiosRouterParam/fetchDataByAxiosRouterParam.vue';
 import fetchDataByAxiosRouterParamPropsComp from '@/components/fetchDataByAxiosRouterParamProps/fetchDataByAxiosRouterParamProps.vue';
 import practice9Comp from '@/components/practice9/practice9.vue';
 import fight001Comp from '@/components/fight001/fight001.vue';
+import refDataComp from '@/components/practice5/refData/refData.vue';
 
 Vue.use(Router)
 
@@ -65,7 +67,7 @@ const router = new Router({
     {
       path: '/practice2' , name : 'practice2' , component : practice2Comp ,
       children : [ // 子路由(嵌套路由) , 以下的組件，會被渲染到 parctice2 組件中的 <router-view>
-        { path: 'test_jqueryAjax', name: 'jqueryAjax' , component: fetchDataByJqueryAjaxComp } , // ※※※ 當 /practice/test001 test_001Comp 会被渲染在 【practiceComp】 的 <router-view> 中
+        { path: 'test_jqueryAjax', name: 'jqueryAjax' , component: fetchDataByJqueryAjaxComp } , // ※※※ 當 /practice2/test_jqueryAjax , fetchDataByJqueryAjaxComp 会被渲染在 practice2Comp 的 <router-view> 中
         { path: 'test_Es6FetchApi', name: 'es6FetchApi' , component: fetchDataByEs6FetchAPIComp } ,
         { path: 'test_axios', name: 'axiosApi' , component: fetchDataByAxiosComp } ,
         { path: 'test_axios_filter', name: 'axiosApiWithFilter' , component: fetchData_FilterComp } ,
@@ -93,6 +95,23 @@ const router = new Router({
         { path: 'toSlot001', name: 'goSlot001', component: slot001Comp } ,
         { path: 'toSlot002', name: 'goSlot002', component: slot002Comp } ,
         { path: 'toSlot003', name: 'goSlot003', component: slot003Comp } ,
+      ]
+    },
+    {
+      path: '/practice5' , name : 'practice5' , component : practice5Comp ,
+      children : [ // 子路由(嵌套路由) , 以下的組件，會被渲染到 parctice4 組件中的 <router-view>
+        // { path: 'test_jqueryAjax', name: 'jqueryAjax' , component: fetchDataByJqueryAjaxComp } , // ※※※ 當 /practice5/test_jqueryAjax , fetchDataByJqueryAjaxComp 会被渲染在 【practice5Comp】 的 <router-view> 中
+        // { path: 'test_Es6FetchApi', name: 'es6FetchApi' , component: fetchDataByEs6FetchAPIComp } ,
+        // { path: 'test_axios', name: 'axiosApi' , component: fetchDataByAxiosComp } ,
+        // { path: 'toRefData', name: 'goRefData' , component: refDataComp } ,
+
+        //-------------------------------------------------------------------------------------
+        // 測試 meta.keepAlive ， 搭配 <router-view v-if="$route.meta.keepAlive"></router-view>
+        //-------------------------------------------------------------------------------------
+        { path: 'test_jqueryAjax' , component: fetchDataByJqueryAjaxComp, meta: { keepAlive: true /*需要被缓存*/ } } , // ※※※ 當 /practice5/test_jqueryAjax , fetchDataByJqueryAjaxComp 会被渲染在 【practice5Comp】 的 <router-view> 中
+        { path: 'test_Es6FetchApi' , component: fetchDataByEs6FetchAPIComp, meta: { keepAlive: false/*不需要被缓存*/ }} ,
+        { path: 'test_axios' , component: fetchDataByAxiosComp, meta: { keepAlive: true /*需要被缓存*/ }} ,
+        { path: 'toRefData', name: 'goRefData' , component: refDataComp ,  meta: { keepAlive: true /*需要被缓存*/ } } ,
       ]
     },
     {

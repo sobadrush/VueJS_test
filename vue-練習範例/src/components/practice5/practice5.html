@@ -1,0 +1,53 @@
+<section class="practice-5">
+  <h1>practice-5 Component - 路由cache狀態 - keep-alive</h1>
+
+  <ul>
+    <li>vue2.0提供了一個keep-alive組件，用來緩存組件，避免多次加載相應的组件，減少性能消耗</li>
+    <li>有時後，可能需要缓存整个站点的所有页面，而頁面一般一進去都要觸發請求的在使用keep-alive的情况下</li>
+    <li>將發request寫在 created()/mounted() 函数中,，就能實現緩存，比如列表页，去了詳情頁 回来，還是是在原來的页面</li>
+  </ul>
+
+  <ul>
+    <li>參考：https://segmentfault.com/a/1190000008123035</li>
+    <li>參考：https://www.jianshu.com/p/0b0222954483</li>
+  </ul>
+
+  <p>※可將此範例的 &lt;keep-alive&gt; 拔掉，查看是否會保留查詢結果狀態</p>
+
+  <!-- <keep-alive>
+    <router-view></router-view>
+  </keep-alive> -->
+
+  <!-- (1) 逗號，分隔多個組件 -->
+  <!-- (2) include/exclude中，填的是 元件名稱 -->
+  <!-- (3) 元件名稱 : fetch-data-by-es-6-fetch-api 不緩存 -->
+  <!-- <keep-alive include="fetch-data-by-jquery-ajax,fetch-data-by-axios">
+    <router-view></router-view>
+  </keep-alive> -->
+
+  <!-- (1) 測試 exclude中-->
+  <!-- (2) 結果：僅 元件名稱 : fetch-data-by-es-6-fetch-api 進行緩存-->
+  <!-- <keep-alive exclude="fetch-data-by-jquery-ajax,fetch-data-by-axios">
+    <router-view></router-view>
+  </keep-alive> -->
+
+  <!-- 【動態】指定要緩存的組件 -->
+  <!-- (1) 將要緩存的組件名稱定義在 practice5 data中 -->
+  <!-- (2) v-bind <keep-alive :include="data中要緩存的屬性名稱陣列">  -->
+  <!-- <hr><hr><hr>要緩存的組件名稱：{{ includedComponents }}
+  <keep-alive :include="includedComponents">
+    <router-view></router-view>
+  </keep-alive> -->
+
+<!-- ============================================================================== -->
+<!-- ※※※ 以下為常用的寫法 ※※※ , 搭配 router/index.js 中， meta: { keepAlive: true } -->
+<!-- 優點：不需要列舉出需要被缓存組件名稱 -->
+<!-- 也就是 include/exclude不需寫這麼多，緩存與否交由組件自身控制 -->
+<!-- ============================================================================== -->
+{{'{' +  '{$route.meta}' + '}'}} = {{ $route.meta }}
+<keep-alive>
+  <router-view v-if="$route.meta.keepAlive"></router-view>
+</keep-alive>
+<router-view v-if="!$route.meta.keepAlive"></router-view>
+
+</section>

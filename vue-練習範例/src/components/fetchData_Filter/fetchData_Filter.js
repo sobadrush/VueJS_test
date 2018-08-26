@@ -6,7 +6,7 @@ export default {
   data () {
     return {
       queryCityId : '1',
-      townsData: {} ,
+      townsData: { towns : [] } , // 在其中先塞好 towns 為 [] ，避免 slice時 undefined
       pageCount : 20 ,
     }
   },

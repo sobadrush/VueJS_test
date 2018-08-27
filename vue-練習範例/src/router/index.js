@@ -33,6 +33,8 @@ import fetchDataByAxiosRouterParamPropsComp from '@/components/fetchDataByAxiosR
 import practice9Comp from '@/components/practice9/practice9.vue';
 import fight001Comp from '@/components/fight001/fight001.vue';
 import refDataComp from '@/components/practice5/refData/refData.vue';
+import practice6Comp from '@/components/practice6/practice6.vue'; // 表單控件
+import cformComp001 from '@/components/practice6/formComp001/formComp001.vue';
 
 Vue.use(Router)
 
@@ -114,6 +116,12 @@ const router = new Router({
         { path: 'test_Es6FetchApi' , component: fetchDataByEs6FetchAPIComp, meta: { keepAlive: false/*不需要被缓存*/ }} ,
         { path: 'test_axios' , component: fetchDataByAxiosComp, meta: { keepAlive: true /*需要被缓存*/ }} ,
         { path: 'toRefData', name: 'goRefData' , component: refDataComp ,  meta: { keepAlive: true /*需要被缓存*/ } } ,
+      ]
+    },
+    {
+      path: '/practice6' , name : 'practice6' , component : practice6Comp ,
+      children : [ // 子路由(嵌套路由) , 以下的組件，會被渲染到 parctice2 組件中的 <router-view>
+        { path: 'toFormComp001', name: 'goFormComp001', component: cformComp001 } ,
       ]
     },
     {

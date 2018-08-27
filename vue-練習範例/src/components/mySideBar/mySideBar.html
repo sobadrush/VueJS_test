@@ -84,6 +84,11 @@
                   <a href="javascript:void(0)">vue - 生命週期函數</a>
                 </router-link>
 
+                <!-- (1)直接用 router-link Render出 li + <a>  (2) 用 :to -->
+                <router-link :to="{ path : `/practice/test014` }" tag="li">
+                  <a href="javascript:void(0)">vue - 自訂 Directive</a>
+                </router-link>
+
             </ul>
         </li>
 

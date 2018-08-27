@@ -1,0 +1,44 @@
+
+<section class="test-014">
+  <h1 class="title-font-style">test-014 Component - 自訂Directive </h1>
+
+  <hr><hr><hr>
+  <img :src="'static/assest/img/自訂指令/自訂指令001.PNG'">
+  <img :src="'static/assest/img/自訂指令/自訂指令002.PNG'">
+  <img :src="'static/assest/img/自訂指令/自訂指令003.PNG'">
+  <img :src="'static/assest/img/自訂指令/自訂指令004.PNG'">
+  <hr><hr><hr>
+
+  <h2> 測試 1 , v-my-focus</h2>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">@Emp-Name</span>
+    </div>
+    <input type="text" class="form-control" aria-describedby="basic-addon1" >
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">@Emp-Salary</span>
+    </div>
+    <!-- 使用自訂指令 v-my-focus -->
+    <input type="text" class="form-control" aria-describedby="basic-addon1" v-my-focus>
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">@Emp-Age</span>
+    </div>
+    <input type="text" class="form-control" aria-describedby="basic-addon1">
+  </div>
+
+  <hr><hr><hr>
+  <h2> 測試 2 , v-fucker</h2>
+  <div class="my-border" v-fucker:ctbc.2018="'fuck you!!!'"></div>
+
+  <hr><hr><hr>
+  <h2> 測試 3 , v-my-for-each</h2>
+  <!-- <pre>{{ empDataList }}</pre> -->
+
+  <div class="my-border" v-my-for-each="empDataList"></div>
+
+</section>
+

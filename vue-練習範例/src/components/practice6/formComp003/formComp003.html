@@ -1,0 +1,25 @@
+
+<section class="form-comp-003">
+  <h1 class="title-font-style">form-comp-003 Component - 測試 checkbox 雙向綁訂</h1>
+  <hr><hr><hr>
+
+  <h2>單選checkbox</h2>
+  <input type="checkbox" id="myCheckbox" v-model="myChecked">
+  <label for="myCheckbox">{{ myChecked }}</label>
+
+  <hr><hr><hr>
+
+  <h2>多選checkbox</h2>
+  <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+  <label for="jack">Jack</label>
+  <input type="checkbox" id="john" value="John" v-model="checkedNames">
+  <label for="john">John</label>
+  <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+  <label for="mike">Mike</label>
+  <br>
+  <span>Checked names: {{ checkedNames }}</span>
+  <br>
+  <span>Checked names: {{ checkedNames | toJson }}</span>
+
+</section>
+

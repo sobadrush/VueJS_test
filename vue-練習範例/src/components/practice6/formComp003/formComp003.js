@@ -1,11 +1,11 @@
 export default {
-  name: 'practice-6',
-  components: {
-  },
+  name: 'form-comp-003',
+  components: {},
   props: [],
   data () {
     return {
-
+      myChecked : false,
+      checkedNames: [] ,
     }
   },
   computed: {

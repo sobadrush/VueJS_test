@@ -36,6 +36,7 @@ import refDataComp from '@/components/practice5/refData/refData.vue';
 import practice6Comp from '@/components/practice6/practice6.vue'; // 表單控件
 import cformComp001 from '@/components/practice6/formComp001/formComp001.vue';
 import cformComp002 from '@/components/practice6/formComp002/formComp002.vue';
+import cformComp003 from '@/components/practice6/formComp003/formComp003.vue';
 
 Vue.use(Router)
 
@@ -124,6 +125,7 @@ const router = new Router({
       children : [ // 子路由(嵌套路由) , 以下的組件，會被渲染到 parctice2 組件中的 <router-view>
         { path: 'toFormComp001', name: 'goFormComp001', component: cformComp001 } ,
         { path: 'toFormComp002', name: 'goFormComp002', component: cformComp002 } ,
+        { path: 'toFormComp003', name: 'goFormComp003', component: cformComp003 } ,
       ]
     },
     {

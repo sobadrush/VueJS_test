@@ -2,10 +2,44 @@
 <section class="form-comp-001">
   <h1 class="title-font-style">form-comp-001 Component - 測試 &lt;input&gt; 雙向綁訂</h1>
   <hr><hr><hr>
+  <p>https://cythilya.github.io/2017/04/14/vue-data-v-model/</p>
+  <hr><hr><hr>
 
+  <h3 class="emphise">v-model 綁定</h3>
   <span>myMessage is: <b>{{ myMessage }}</b> </span>
   <br>
-  <input type="text" v-model="myMessage" placeholder="edit me">
+  <input type="text" v-model="myMessage" placeholder="請輸入...">
 
+  <hr style="border:2px solid blue;">
+
+  <h3 class="emphise">v-model.lazy 綁定(滑鼠移開時才觸發)</h3>
+  <img class="my-border margin-around" src="static/assest/img/vModel001.PNG"><br>
+  <span>myMessage is: <b>{{ myMessage }}</b> </span>
+  <br>
+  <input type="text" v-model.lazy="myMessage" placeholder="請輸入...">
+
+  <hr style="border:2px solid blue;">
+
+  <h3 class="emphise">v-model.number 綁定(得到的資料型別是 number，而非 string)</h3>
+  <input type="text" v-model.number="myMessage" placeholder="請輸入...">
+  <p>myMessage is: <b style="color:brown">{{ myMessage }}</b> </p>
+  <p>typeof(myMessage) is: <b style="color:brown">{{ typeof(myMessage) }}</b> </p>
+  <br>
+
+  <hr style="border:2px solid blue;">
+
+  <h3 class="emphise">v-model.trim 綁定(滑鼠移開後會去除頭尾空白)</h3>
+  <input type="text" v-model.trim="myMessage" placeholder="請輸入...">
+  <p>myMessage is: <b style="color:brown">{{ myMessage }}</b> </p>
+  <br>
+
+  <hr style="border:2px solid blue;">
+
+  <h3 class="emphise">debounce  在每次敲擊之後延時同步輸入框的值與數據。如果每次更新都要進行高耗時（例如在输入提示中 Ajax 請求），較為常用！</h3>
+  <input type="text" v-model="myMessage" placeholder="請輸入..." debounce="500">
+  <p>myMessage is: <b style="color:brown">{{ myMessage }}</b> </p>
+  <br>
+
+  <br><br><br>
 </section>
 

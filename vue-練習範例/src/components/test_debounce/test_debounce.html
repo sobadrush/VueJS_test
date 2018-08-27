@@ -1,0 +1,53 @@
+
+<section class="test-debounce">
+
+  <h1 class="title-font-style">test-debounce Component</h1>
+  <hr><hr><hr>
+  <h4 class="emphise">1. 使用 lodash 的 debounce，避免 @keyup 連續發出ajax</h4>
+  <h4 class="emphise">2. 似乎不必在 index.html 中引用 lodash</h4>
+  <h4 class="emphise">3. 但必須在js中，import _ from 'lodash'</h4>
+
+  <ul class="margin-around">
+    <li>https://zhuanlan.zhihu.com/p/32652373</li>
+    <li>https://alligator.io/vuejs/lodash-throttle-debounce/</li>
+    <li>https://zhuanlan.zhihu.com/p/31633579</li>
+  </ul>
+
+  <hr><hr><hr>
+
+  城市：<b v-if="Object.keys(townsData).length != 0" style="color:blueviolet">{{ townsData.name }} </b><br>
+  <!-- <input type="text" style="text-align:center;" v-model="queryCityId" @keyup="doFetchDataAxios(queryCityId)"> -->
+  <input type="text" style="text-align:center;" v-model="queryCityId" @keyup="debounceFetchData( queryCityId )">
+
+  <!-- <button type="button" class="btn btn-primary margin-around" @click="doFetchDataAxios(queryCityId)">
+    取得天氣預報 <b v-if="Object.keys(townsData).length != 0">( {{ townsData.name }} )</b>
+  </button> -->
+
+  <button type="button" class="btn btn-secondary margin-around" @click="clearData()">清除資料</button>
+
+  <table class="table table-sm" border="2">
+      <thead>
+        <tr class="table-danger">
+          <th scope="col" style="width:2%">#</th>
+          <th scope="col">cwb_id</th>
+          <th scope="col">區名</th>
+          <th scope="col">經度</th>
+          <th scope="col">緯度</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(item , indexFuck) in townsData.towns" :key="item.cwb_id">
+            <th scope="row">{{ indexFuck + 1 }}</th>
+            <th scope="row">{{ item.cwb_id }}</th>
+            <th scope="row">{{ item.name }}</th>
+            <th scope="row">{{ item.position.lat }}</th>
+            <th scope="row">{{ item.position.lng }}</th>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- <pre>
+        {{ this.townsData }}
+    </pre> -->
+</section>
+

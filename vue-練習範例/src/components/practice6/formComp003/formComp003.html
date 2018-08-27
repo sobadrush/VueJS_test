@@ -7,6 +7,7 @@
   <input type="checkbox" id="myCheckbox" v-model="myChecked">
   <label for="myCheckbox">{{ myChecked }}</label>
 
+
   <hr><hr><hr>
 
   <h2>多選checkbox</h2>
@@ -20,6 +21,16 @@
   <span>Checked names: {{ checkedNames }}</span>
   <br>
   <span>Checked names: {{ checkedNames | toJson }}</span>
+
+  <h3 class="margin-around my-font" v-if="checkedNames.includes( 'Jack' )">
+    選中Jack
+  </h3>
+  <h3 class="margin-around my-font" v-if="checkedNames.includes( 'John' )">
+    選中John
+  </h3>
+  <h3 class="margin-around my-font" v-if="checkedNames.includes( 'Mike' )">
+    選中Mike
+  </h3>
 
 </section>
 

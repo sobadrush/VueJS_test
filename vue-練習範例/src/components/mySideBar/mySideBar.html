@@ -119,7 +119,12 @@
                        axios取資料 - filter - limitTo
                     </router-link>
                 </li>
-
+                <li>
+                    <!-- 命名路由 ─ 直接指定到children路由上 -->
+                    <router-link :to="{ name : 'goTestDebounce' }" tag="a">
+                       axios取資料 + debounce
+                    </router-link>
+                </li>
             </ul>
         </li>
 

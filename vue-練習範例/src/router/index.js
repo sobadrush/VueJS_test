@@ -21,6 +21,7 @@ import practice2Comp from '@/components/practice2/practice2.vue';
 import practice3Comp from '@/components/practice3/practice3.vue';
 import fetchDataByJqueryAjaxComp from '@/components/fetchDataByJqueryAjax/fetchDataByJqueryAjax.vue';
 import fetchDataByEs6FetchAPIComp from '@/components/fetchDataByEs6FetchAPI/fetchDataByEs6FetchAPI.vue';
+import testDebounceComp from '@/components/test_debounce/test_debounce.vue';
 import practice4Comp from '@/components/practice4/practice4.vue';
 import slot001Comp from '@/components/practice4/slot001/slot001.vue';
 import slot002Comp from '@/components/practice4/slot002/slot002.vue';
@@ -79,6 +80,7 @@ const router = new Router({
         { path: 'test_Es6FetchApi', name: 'es6FetchApi' , component: fetchDataByEs6FetchAPIComp } ,
         { path: 'test_axios', name: 'axiosApi' , component: fetchDataByAxiosComp } ,
         { path: 'test_axios_filter', name: 'axiosApiWithFilter' , component: fetchData_FilterComp } ,
+        { path: 'toTestDebounce', name: 'goTestDebounce' , component: testDebounceComp } ,
       ]
     },
     {

@@ -14,6 +14,8 @@ export default {
         { text: 'Two'  , value: 'Book'  },
         { text: 'Three', value: 'Cat'   }
       ],
+      //----------------------------------------------------------
+      selectedData5: { empId : '5566' }, // 預設綁訂某個 option 的 value，即可達到初始選擇某值的效果
     }
   },
   computed: {

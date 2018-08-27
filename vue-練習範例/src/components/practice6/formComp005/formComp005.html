@@ -47,5 +47,16 @@
   </select>
   <h3>selectedData4: {{ selectedData4 }}</h3>
 
+  <hr style="border:1px solid red">
+
+  <h3>綁定JS物件</h3>
+  <select v-model="selectedData5">
+    <option v-bind:value="{ empId : 7788 }">7788</option>
+    <option v-bind:value="{ empId : 5566 }">5566</option>
+    <option v-bind:value="{ empId : 9487 }">9487</option>
+  </select>
+  <h3>{{ selectedData5 }}</h3>
+
+  <br><br><br>
 </section>
 

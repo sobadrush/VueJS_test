@@ -37,6 +37,8 @@ import practice6Comp from '@/components/practice6/practice6.vue'; // 表單控�
 import cformComp001 from '@/components/practice6/formComp001/formComp001.vue';
 import cformComp002 from '@/components/practice6/formComp002/formComp002.vue';
 import cformComp003 from '@/components/practice6/formComp003/formComp003.vue';
+import cformComp004 from '@/components/practice6/formComp004/formComp004.vue';
+import cformComp005 from '@/components/practice6/formComp005/formComp005.vue';
 
 Vue.use(Router)
 
@@ -126,6 +128,8 @@ const router = new Router({
         { path: 'toFormComp001', name: 'goFormComp001', component: cformComp001 } ,
         { path: 'toFormComp002', name: 'goFormComp002', component: cformComp002 } ,
         { path: 'toFormComp003', name: 'goFormComp003', component: cformComp003 } ,
+        { path: 'toFormComp004', name: 'goFormComp004', component: cformComp004 } ,
+        { path: 'toFormComp005', name: 'goFormComp005', component: cformComp005 } ,
       ]
     },
     {

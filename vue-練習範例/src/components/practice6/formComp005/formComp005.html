@@ -1,0 +1,41 @@
+
+<section class="form-comp-005">
+  <h1 class="title-font-style">form-comp-005 Component - 測試 Select Option 雙向綁訂</h1>
+  <hr><hr><hr>
+  <p>參考：https://v1-cn.vuejs.org/guide/forms.html#Radio</p>
+  <hr><hr><hr>
+
+  <h3>基本款</h3>
+  <select v-model="selectedData">
+    <option selected="selected" disabled="true">-- Please Select --</option>
+    <option value="fuckA">A</option>
+    <option value="fuckB">B</option>
+    <option value="fuckC">C</option>
+  </select>
+  <h3>selectedData : {{ selectedData }}</h3>
+
+  <hr style="border:1px solid red">
+
+  <h3>有"預設值"的Select option</h3>
+  <p>預設綁訂某個 option 的 value，即可達到初始選擇某值的效果</p>
+  <select v-model="selectedData2">
+    <option value="defaultGG" disabled="true">-- Please Select --</option>
+    <option value="fuckA">A</option>
+    <option value="fuckB">B</option>
+    <option value="fuckC">C</option>
+  </select>
+  <h3>selectedData2 : {{ selectedData2 }}</h3>
+
+  <hr style="border:1px solid red">
+
+  <h3>多選的Select option</h3>
+  <select v-model="selectedData3" multiple>
+    <option value="fuckA">AAA</option>
+    <option value="fuckB">BBB</option>
+    <option value="fuckC">CCC</option>
+  </select>
+  <br>
+  <span>selectedData3: {{ selectedData3 }}</span>
+
+</section>
+

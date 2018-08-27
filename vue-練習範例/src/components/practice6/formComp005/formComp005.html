@@ -37,5 +37,15 @@
   <br>
   <span>selectedData3: {{ selectedData3 }}</span>
 
+  <hr style="border:1px solid red">
+
+  <h3>搭配 v-for , Select option</h3>
+  <select v-model="selectedData4">
+    <option v-for="opt in myOptions" v-bind:value="opt.value">
+      {{ opt.text }}
+    </option>
+  </select>
+  <h3>selectedData4: {{ selectedData4 }}</h3>
+
 </section>
 

@@ -274,6 +274,12 @@
                       查資料成功後導頁
                     </router-link>
                 </li>
+                <li>
+                    <!-- 命名路由 ─ 直接指定到children路由上 -->
+                    <router-link :to="{ name : 'goFight002' }" tag="a">
+                      測試axios查後端資料(SpringMVC)
+                    </router-link>
+                </li>
             </ul>
         </li>
 

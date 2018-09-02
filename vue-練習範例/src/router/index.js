@@ -33,6 +33,7 @@ import fetchDataByAxiosRouterParamComp from '@/components/fetchDataByAxiosRouter
 import fetchDataByAxiosRouterParamPropsComp from '@/components/fetchDataByAxiosRouterParamProps/fetchDataByAxiosRouterParamProps.vue';
 import practice9Comp from '@/components/practice9/practice9.vue';
 import fight001Comp from '@/components/fight001/fight001.vue';
+import fight002Comp from '@/components/fight002/fight002.vue';
 import refDataComp from '@/components/practice5/refData/refData.vue';
 import practice6Comp from '@/components/practice6/practice6.vue'; // 表單控件
 import cformComp001 from '@/components/practice6/formComp001/formComp001.vue';
@@ -138,6 +139,7 @@ const router = new Router({
       path: '/practice9' , name : 'practice9' , component : practice9Comp ,
       children : [ // 子路由(嵌套路由) , 以下的組件，會被渲染到 parctice2 組件中的 <router-view>
         { path: 'toFight001', name: 'goFight001', component: fight001Comp } ,
+        { path: 'toFight002', name: 'goFight002', component: fight002Comp } ,
       ]
     },
     { path: '*', redirect: '/' } // 萬用路由(放最後)，以上路由樹都匹配不到時，會進入萬用路由

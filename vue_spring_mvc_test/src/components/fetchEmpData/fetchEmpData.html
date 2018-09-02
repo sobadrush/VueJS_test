@@ -1,0 +1,35 @@
+
+<section class="fetch-emp-data">
+  <h1>fetch-emp-data Component</h1>
+  <h2 style="color:orchid">axios元件查後端員工資料(SpringMVC)</h2>
+
+  <hr>
+
+  <button type="button" class="btn btn-danger" @click="doFetchData()">查資料囉~</button>
+  <button type="button" class="btn btn-secondary" @click="clearData()">清空資料</button><br>
+
+  <table class="table table-hover" border="3" style="margin:0.5cm">
+      <thead>
+        <tr class="table-dark">
+          <th scope="col" style="width:2%">#</th>
+          <th scope="col">empId</th>
+          <th scope="col">empName</th>
+          <th scope="col">empJob</th>
+          <th scope="col">empHiredate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(item, index) in cbData">
+          <th scope="row">#{{ index + 1 }}</th>
+          <td>{{ item.empId }}</td>
+          <td>{{ item.empName }}</td>
+          <td>{{ item.empJob }}</td>
+          <td>{{ item.empHiredate }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  <pre>{{ cbData }}</pre>
+
+</section>
+

@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 import cHomePage from '@/components/HomePage/HomePage.vue'
 import cfetchEmpData from '@/components/fetchEmpData/fetchEmpData.vue'
+import cfetchRandomUserApi from '@/components/fetchRandomUserApi/fetchRandomUserApi.vue'
 
 Vue.use(Router)
 
@@ -16,6 +17,9 @@ export default new Router({
     },
     {
       path: '/goFetchEmpData', name: 'toFetchEmpData', component: cfetchEmpData
+    },
+    {
+      path: '/goFetchRandUserData', name: 'toFetchRandUserData', component: cfetchRandomUserApi
     },
     {
       path : '*' , redirect : '/' /* 萬用路由(放最後) */

@@ -1,0 +1,68 @@
+
+<section class="fetch-random-user-api">
+  <h1>fetch-random-user-api Component</h1>
+  <h2 style="color:rgb(23, 104, 253)">axios元件查隨機User測試資料</h2>
+
+  <hr>
+
+  <div class="input-group mb-3" style="width:5cm;">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">查詢筆數</span>
+    </div>
+    <input type="text" class="form-control" style="text-align:center;" v-model="queryNumber">
+  </div>
+
+  <button type="button" class="btn btn-danger" @click="doFetchData( queryNumber )">查資料囉~</button>
+  <button type="button" class="btn btn-secondary" @click="clearData()">清空資料</button><br>
+
+  <table class="table table-sm margin-top" border="3">
+    <thead>
+      <tr class="table-info">
+        <th scope="col" style="width:3%">#</th>
+        <th scope="col">照片</th>
+        <th scope="col">全名</th>
+        <th scope="col">性別</th>
+        <th scope="col">郵箱</th>
+        <th scope="col">電話</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(item, idx) in empList">
+        <th scope="row">{{ idx + 1 }}</th>
+        <td><img v-bind:src="item.picture.thumbnail" alt="" srcset=""></td>
+        <td>{{ item.gender == 'male' ? '男' : '女' }}</td>
+        <td>{{ item.name.first }} ‧ {{ item.name.last }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.phone }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- <div class="pagination">
+    <ul>
+    <li v-bind:class="{'disabled': (currPage === 1)}"
+        @click.prevent="setPage(currPage-1)"><a href="#">Prev</a></li>
+    <li v-for="n in totalPage"
+        v-bind:class="{'active': (currPage === (n))}"
+        @click.prevent="setPage(n)"><a href="#">{{n}}</a></li>
+    <li v-bind:class="{'disabled': (currPage === totalPage)}"
+        @click.prevent="setPage(currPage+1)"><a href="#">Next</a></li>
+    </ul>
+  </div> -->
+
+  <!-- <ul class="pagination">
+    <li class="page-item" :class="{'disabled': (currPage === 1)}" @click.prevent="setPage( currPage - 1 )">
+      <a class="page-link" href="#" tabindex="-1">Previous</a>
+    </li>
+
+    <li class="page-item" v-for="n in totalPage" :class="{'active': (currPage === (n))}" click.prevent="setPage( n )">
+      <a href="#">{{ n }}</a>
+    </li>
+
+    <li class="page-item" :class="{'disabled': (currPage === totalPage)}" @click.prevent="setPage( currPage + 1 )">
+      <a href="#">Next</a>
+    </li>
+  </ul> -->
+
+</section>
+

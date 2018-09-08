@@ -45,15 +45,15 @@
 
 
 <script>
-import cMyHeader from "@/components/MyHeader/MyHeader.vue";
+  import cMyHeader from "@/components/MyHeader/MyHeader.vue";
 
-export default {
-  name: "App",
-  // 記得裝 npm install sass-loader node-sass --save-dev
-  components: {
-    "my-header": cMyHeader
-  }
-};
+  export default {
+    name: "App",
+    // 記得裝 npm install sass-loader node-sass --save-dev
+    components: {
+      "my-header": cMyHeader
+    }
+  };
 </script>
 
 <style>

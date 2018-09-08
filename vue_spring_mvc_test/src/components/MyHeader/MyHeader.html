@@ -6,6 +6,7 @@
       <!-- <h3>Bootstrap Sidebar</h3>
       <strong>BS</strong> -->
 
+      <!-- 路由 -->
       <router-link :to="{ path : '/' }" tag="h3">
         <a style="color:orange;" href="javascript:void(0)">Bootstrap Sidebar</a>
       </router-link>
@@ -34,13 +35,24 @@
         </ul>
       </li>
       <li>
+
+
         <a href="#">
+          <!-- 路由 -->
           <i class="fas fa-briefcase"></i>
           <router-link :to="{ name : 'toFetchEmpData' }" tag="li">
             <a style="color:rgb(216, 25, 57);" href="javascript:void(0)">axios查Emps(SpringMVC)</a>
           </router-link>
-
         </a>
+
+        <a href="#">
+          <!-- 路由 -->
+          <i class="fas fa-briefcase"></i>
+          <router-link :to="{ path : 'goFetchRandUserData' }" tag="li">
+            <a style="color:rgb(253, 207, 0);" href="javascript:void(0)">axios查RandomUserApi</a>
+          </router-link>
+        </a>
+
         <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
           <i class="fas fa-copy"></i>
           Pages

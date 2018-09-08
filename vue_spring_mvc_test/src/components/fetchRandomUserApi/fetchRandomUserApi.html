@@ -1,19 +1,32 @@
-
 <section class="fetch-random-user-api">
   <h1>fetch-random-user-api Component</h1>
   <h2 style="color:rgb(23, 104, 253)">axios元件查隨機User測試資料</h2>
+  <h5>※(1) 使用computed進行分頁</h5>
+  <h5>※(2) 使用filter轉大寫</h5>
 
   <hr>
 
-  <div class="input-group mb-3" style="width:5cm;">
+  <div class="input-group">
+
     <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon1">查詢筆數</span>
+      <span class="input-group-text">查詢筆數</span>
     </div>
-    <input type="text" class="form-control" style="text-align:center;" v-model="queryNumber">
+    <input type="text" class="form-control col-2" style="text-align:center;" v-model="queryNumber">
+
+    <div class="input-group-prepend" style="margin-left:10px;">
+      <span class="input-group-text">每頁筆數</span>
+    </div>
+    <input type="text" class="form-control col-2" style="text-align:center;" v-model="countOfPage">
+
   </div>
 
-  <button type="button" class="btn btn-danger" @click="doFetchData( queryNumber )">查資料囉~</button>
-  <button type="button" class="btn btn-secondary" @click="clearData()">清空資料</button><br>
+
+  <button type="button" class="btn btn-danger margin-top" @click="doFetchData( queryNumber )">查資料囉~</button>
+  <button type="button" class="btn btn-secondary margin-top" @click="clearData()">清空資料</button><br>
+
+  <p>pageStart = {{ pageStart }}</p>
+  <p>countOfPage = {{ countOfPage }}</p>
+  <p>pageStart + countOfPage = {{ +pageStart + +countOfPage }} <em>※注意要轉數字</em></p>
 
   <table class="table table-sm margin-top" border="3">
     <thead>
@@ -27,42 +40,30 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="(item, idx) in empList">
-        <th scope="row">{{ idx + 1 }}</th>
-        <td><img v-bind:src="item.picture.thumbnail" alt="" srcset=""></td>
-        <td>{{ item.gender == 'male' ? '男' : '女' }}</td>
-        <td>{{ item.name.first }} ‧ {{ item.name.last }}</td>
+      <tr v-for="(item, idx) in empList.slice( pageStart , +pageStart + +countOfPage )">
+        <th :style="{'text-align':'center'}">{{ idx + 1 }}</th>
+        <td :style="{'text-align':'center'}"><img v-bind:src="item.picture.thumbnail" :title="item.picture.thumbnail"></td>
+        <td :style="{'text-align':'center'}">{{ item.gender == 'male' ? '男' : '女' }}</td>
+        <td>{{ item.name.first | upperCaseCharByNum( 0 ) }} ‧ {{ item.name.last | upperCaseCharByNum( 0 ) }}</td>
         <td>{{ item.email }}</td>
         <td>{{ item.phone }}</td>
       </tr>
     </tbody>
   </table>
 
-  <!-- <div class="pagination">
-    <ul>
-    <li v-bind:class="{'disabled': (currPage === 1)}"
-        @click.prevent="setPage(currPage-1)"><a href="#">Prev</a></li>
-    <li v-for="n in totalPage"
-        v-bind:class="{'active': (currPage === (n))}"
-        @click.prevent="setPage(n)"><a href="#">{{n}}</a></li>
-    <li v-bind:class="{'disabled': (currPage === totalPage)}"
-        @click.prevent="setPage(currPage+1)"><a href="#">Next</a></li>
-    </ul>
-  </div> -->
 
-  <!-- <ul class="pagination">
+  <ul class="pagination">
     <li class="page-item" :class="{'disabled': (currPage === 1)}" @click.prevent="setPage( currPage - 1 )">
-      <a class="page-link" href="#" tabindex="-1">Previous</a>
+      <a class="page-link" href="javascript:void(0);">Previous</a>
     </li>
 
     <li class="page-item" v-for="n in totalPage" :class="{'active': (currPage === (n))}" click.prevent="setPage( n )">
-      <a href="#">{{ n }}</a>
+      <a class="page-link" href="javascript:void(0);">{{ n }}</a>
     </li>
 
     <li class="page-item" :class="{'disabled': (currPage === totalPage)}" @click.prevent="setPage( currPage + 1 )">
-      <a href="#">Next</a>
+      <a class="page-link" href="javascript:void(0);">Next</a>
     </li>
-  </ul> -->
+  </ul>
 
 </section>
-

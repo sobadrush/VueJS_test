@@ -20,6 +20,15 @@ export default {
     alertTest (_msg) {
       alert(_msg.target);
     },
+    toHomePage (_$event) {
+      this.$router.push({
+        path: '/'
+      });
+    },
+    toPrevPage (_$event) {
+      // 類似 window.history , $router.replace導過來的，不會加到History中，無法使用 $router.go(-1) 回前頁
+      this.$router.go(-1);
+    },
     toCardPage: function(_msg) {
       this.$router.push({
         path: '/cards'

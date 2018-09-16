@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
   <button type="button" class="btn btn-outline-danger" @click="toHomePage($event)" >回首頁</button>
+  <button type="button" class="btn btn-outline-warning" @click="toPrevPage($event)" >回前頁</button>
   <button type="button" class="btn btn-outline-danger" v-on:click="toCardPage($event)" >到Cards(不帶參數)</button>
   <button type="button" class="btn btn-outline-primary" @click="toCardPage_with_queryParam($event)" >到Cards(帶query參數)</button>
   <button type="button" class="btn btn-outline-warning" @click="toCardPage_with_pathParam($event)" >到Cards(帶path參數)</button>

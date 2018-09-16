@@ -14,8 +14,7 @@ export default new Router({
   mode:'hash',
   routes: [
     {
-      path: '/',
-      component: cards
+      path: '/', redirect : '/cards' /* 預設路由 */
     },
     {
       path: '/cards/:passingMsg?/:passingMsg2?', // ? : 代表userId可有可無
@@ -24,17 +23,20 @@ export default new Router({
       props: true
     },
     {
-      path: '/home',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path: '/home', name: 'HelloWorld', component: HelloWorld
     },
     {
       path: '/charts', component: myCharts,
       children: [
         {
+          // myFlot 會被渲染在 myCharts 的 <router-view> 中，
+          // 所以 myCharts 中要記得寫 <router-view>
           path: 'flot', component: myFlot
         },
       ]
+    },
+    {
+      path : '*' , redirect : '/' /* 萬用路由 */
     }
   ]
 })

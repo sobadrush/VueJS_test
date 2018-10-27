@@ -34,6 +34,7 @@ import fetchDataByAxiosRouterParamPropsComp from '@/components/fetchDataByAxiosR
 import practice9Comp from '@/components/practice9/practice9.vue';
 import fight001Comp from '@/components/fight001/fight001.vue';
 import fight002Comp from '@/components/fight002/fight002.vue';
+import fight003Comp from '@/components/fight003/fight003.vue';
 import refDataComp from '@/components/practice5/refData/refData.vue';
 import practice6Comp from '@/components/practice6/practice6.vue'; // 表單控件
 import cformComp001 from '@/components/practice6/formComp001/formComp001.vue';
@@ -96,7 +97,7 @@ const router = new Router({
           path: 'test_axios_router_props/:myQueryCityId?/:empId?/:empName?/:functionName?',
           name: 'axiosApiRouterParamProps' ,
           component: fetchDataByAxiosRouterParamPropsComp ,
-          props : true, // 如果 props 被设置为 true，route.params 將會被設置為組鍵自身的屬性
+          props : true, // 如果 props 被设置为 true，route.params 將會被設置為組件自身的屬性
         } ,
       ]
     },
@@ -110,7 +111,7 @@ const router = new Router({
     },
     {
       path: '/practice5' , name : 'practice5' , component : practice5Comp ,
-      children : [ // 子路由(嵌套路由) , 以下的組件，會被渲染到 parctice4 組件中的 <router-view>
+      children : [ // 子路由(嵌套路由) , 以下的組件，會被渲染到 parctice5 組件中的 <router-view>
         // { path: 'test_jqueryAjax', name: 'jqueryAjax' , component: fetchDataByJqueryAjaxComp } , // ※※※ 當 /practice5/test_jqueryAjax , fetchDataByJqueryAjaxComp 会被渲染在 【practice5Comp】 的 <router-view> 中
         // { path: 'test_Es6FetchApi', name: 'es6FetchApi' , component: fetchDataByEs6FetchAPIComp } ,
         // { path: 'test_axios', name: 'axiosApi' , component: fetchDataByAxiosComp } ,
@@ -127,7 +128,7 @@ const router = new Router({
     },
     {
       path: '/practice6' , name : 'practice6' , component : practice6Comp ,
-      children : [ // 子路由(嵌套路由) , 以下的組件，會被渲染到 parctice2 組件中的 <router-view>
+      children : [ // 子路由(嵌套路由) , 以下的組件，會被渲染到 parctice6 組件中的 <router-view>
         { path: 'toFormComp001', name: 'goFormComp001', component: cformComp001 } ,
         { path: 'toFormComp002', name: 'goFormComp002', component: cformComp002 } ,
         { path: 'toFormComp003', name: 'goFormComp003', component: cformComp003 } ,
@@ -137,9 +138,10 @@ const router = new Router({
     },
     {
       path: '/practice9' , name : 'practice9' , component : practice9Comp ,
-      children : [ // 子路由(嵌套路由) , 以下的組件，會被渲染到 parctice2 組件中的 <router-view>
+      children : [ // 子路由(嵌套路由) , 以下的組件，會被渲染到 parctice9 組件中的 <router-view>
         { path: 'toFight001', name: 'goFight001', component: fight001Comp } ,
         { path: 'toFight002', name: 'goFight002', component: fight002Comp } ,
+        { path: 'toFight003', name: 'goFight003', component: fight003Comp } ,
       ]
     },
     { path: '*', redirect: '/' } // 萬用路由(放最後)，以上路由樹都匹配不到時，會進入萬用路由

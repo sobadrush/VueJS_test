@@ -3,12 +3,12 @@
     {
       "id": 1,
       "empName": "Roger",
-      "empLevel": "3",
+      "empLevel": "9",
       "empSalary": "22000"
     },
     {
       "empName": "Kelly222",
-      "empLevel": "8",
+      "empLevel": "3",
       "empSalary": "33666",
       "id": 2
     }

@@ -80,8 +80,14 @@ export default {
     doModEmpById(_empModData) {
       console.log(`%c ================= doModEmpById() ================== \n %s`, 'color:pink', this.toJson(_empModData));
 
-      let empId = _empModData.id;
-      const jsonServerUrl = `http://localhost:3000/emps/${empId}`;
+      // ※※※ ES6解構 ※※※
+      let { id , empName , empLevel , empSalary } = _empModData;
+      console.log('id' , id);
+      console.log('empName' , empName);
+      console.log('empLevel' , empLevel);
+      console.log('empSalary' , empSalary);
+
+      const jsonServerUrl = `http://localhost:3000/emps/${id}`;
 
       patchData(jsonServerUrl, _empModData).then((res) => {
         console.log('patchData res >>> ', res);

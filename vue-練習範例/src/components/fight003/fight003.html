@@ -8,19 +8,19 @@
     <div class="input-group-prepend">
       <span class="input-group-text">empName</span>
     </div>
-    <input type="text" class="form-control" placeholder="輸入員工姓名" v-model="empAddData.empName"><!-- 雙向綁定 -->
+    <input type="text" class="form-control" placeholder="輸入員工姓名" v-model.trim="empAddData.empName"><!-- 雙向綁定 -->
   </div>
   <div class="input-group mb-3" v-bind:class="{ 'margin-around': true }" :style="{ width : '35%' }">
     <div class="input-group-prepend">
       <span class="input-group-text">empLevel</span>
     </div>
-    <input type="text" class="form-control" placeholder="輸入員工職等" v-model="empAddData.empLevel"><!-- 雙向綁定 -->
+    <input type="text" class="form-control" placeholder="輸入員工職等" v-model.trim="empAddData.empLevel"><!-- 雙向綁定 -->
   </div>
   <div class="input-group mb-3" v-bind:class="{ 'margin-around': true }" :style="{ width : '35%' }">
     <div class="input-group-prepend">
       <span class="input-group-text">empSalary</span>
     </div>
-    <input type="text" class="form-control" placeholder="輸入員工薪資" v-model="empAddData.empSalary"><!-- 雙向綁定 -->
+    <input type="text" class="form-control" placeholder="輸入員工薪資" v-model.trim="empAddData.empSalary"><!-- 雙向綁定 -->
   </div>
 
   <button type="button" class="btn btn-outline-primary margin-around"
@@ -35,21 +35,21 @@
     <div class="input-group-prepend">
       <span class="input-group-text" :style="{ 'background' : 'pink' }" id="basic-addon1">id</span>
     </div>
-    <input type="text" class="form-control" placeholder="輸入員工id" v-model="empModData.id" @keyup="doFetchEmpDataById( empModData.id )"><!-- 雙向綁定 -->
+    <input type="text" class="form-control" placeholder="輸入員工id" v-model.trim="empModData.id" @keyup="doFetchEmpDataById( empModData.id )"><!-- 雙向綁定 -->
   </div>
 
   <div class="input-group mb-3" v-bind:class="{ 'margin-around': true }" :style="{ width : '100%' }">
     <div class="input-group-prepend">
       <span class="input-group-text">empName</span>
-      <input type="text" class="form-control" placeholder="輸入員工姓名" v-model="empModData.empName"><!-- 雙向綁定 -->
+      <input type="text" class="form-control" placeholder="輸入員工姓名" v-model.trim="empModData.empName"><!-- 雙向綁定 -->
     </div>
     <div class="input-group-prepend">
       <span class="input-group-text">empLevel</span>
-      <input type="text" class="form-control" placeholder="輸入員工職等" v-model="empModData.empLevel"><!-- 雙向綁定 -->
+      <input type="text" class="form-control" placeholder="輸入員工職等" v-model.trim="empModData.empLevel"><!-- 雙向綁定 -->
     </div>
     <div class="input-group-prepend">
       <span class="input-group-text">empSalary</span>
-      <input type="text" class="form-control" placeholder="輸入員工薪資" v-model="empModData.empSalary"><!-- 雙向綁定 -->
+      <input type="text" class="form-control" placeholder="輸入員工薪資" v-model.trim="empModData.empSalary"><!-- 雙向綁定 -->
     </div>
   </div>
 

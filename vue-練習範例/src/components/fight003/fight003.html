@@ -1,46 +1,77 @@
 <section class="fight-003">
   <h1 class="title-font-style">fight-003 Component - 查資料json-server</h1>
 
+  <hr :class="{ 'myhr' : true }">
+
   <!-- 新增區 -->
   <div class="input-group mb-3" v-bind:class="{ 'margin-around': true }" :style="{ width : '35%' }">
     <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon1">empName</span>
+      <span class="input-group-text">empName</span>
     </div>
-    <!-- <input type="text" class="form-control" placeholder="輸入員工姓名" v-model="empName"> -->
-    <input type="text" class="form-control" placeholder="輸入員工姓名" v-model="empAddData.empName">
+    <input type="text" class="form-control" placeholder="輸入員工姓名" v-model="empAddData.empName"><!-- 雙向綁定 -->
   </div>
   <div class="input-group mb-3" v-bind:class="{ 'margin-around': true }" :style="{ width : '35%' }">
     <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon1">empLevel</span>
+      <span class="input-group-text">empLevel</span>
     </div>
-    <input type="text" class="form-control" placeholder="輸入員工職等" v-model="empAddData.empLevel">
+    <input type="text" class="form-control" placeholder="輸入員工職等" v-model="empAddData.empLevel"><!-- 雙向綁定 -->
   </div>
   <div class="input-group mb-3" v-bind:class="{ 'margin-around': true }" :style="{ width : '35%' }">
     <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon1">empSalary</span>
+      <span class="input-group-text">empSalary</span>
     </div>
-    <input type="text" class="form-control" placeholder="輸入員工薪資" v-model="empAddData.empSalary">
+    <input type="text" class="form-control" placeholder="輸入員工薪資" v-model="empAddData.empSalary"><!-- 雙向綁定 -->
   </div>
 
-  <button type="button" class="btn btn-outline-primary margin-around" @click="doAddEmp()">新增員工資料(POST)</button>
+  <button type="button" class="btn btn-outline-primary margin-around"
+    :disabled="(!!empAddData.empName && !!empAddData.empLevel && !!empAddData.empSalary) == false"
+    @click.prevent="doAddEmp()">新增員工資料(POST)</button>
 
+  <hr>
+
+  <!-- 修改區 -->
+  <div class="input-group mb-3" v-bind:class="{ 'margin-around': true }" :style="{ width : '35%' }">
+    <div class="input-group-prepend">
+      <span class="input-group-text" :style="{ 'background' : 'pink' }" id="basic-addon1">id</span>
+    </div>
+    <input type="text" class="form-control" placeholder="輸入員工id" v-model="empModData.id"><!-- 雙向綁定 -->
+  </div>
+
+  <div class="input-group mb-3" v-bind:class="{ 'margin-around': true }" :style="{ width : '100%' }">
+    <div class="input-group-prepend">
+      <span class="input-group-text">empName</span>
+      <input type="text" class="form-control" placeholder="輸入員工姓名" v-model="empModData.empName"><!-- 雙向綁定 -->
+    </div>
+    <div class="input-group-prepend">
+      <span class="input-group-text">empLevel</span>
+      <input type="text" class="form-control" placeholder="輸入員工職等" v-model="empModData.empLevel"><!-- 雙向綁定 -->
+    </div>
+    <div class="input-group-prepend">
+      <span class="input-group-text">empSalary</span>
+      <input type="text" class="form-control" placeholder="輸入員工薪資" v-model="empModData.empSalary"><!-- 雙向綁定 -->
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-outline-dark margin-around"
+    :disabled="(!!empModData.id) == false"
+    @click.prevent="doModEmpById(empModData)">修改員工資料(PATCH)</button>
   <hr>
 
   <!-- 刪除區 -->
   <div class="input-group mb-3" :style="{ width : '35%' }">
     <div class="input-group-prepend">
-      <button type="button" class="btn btn-outline-danger" @click="doDelete($event)">刪除</button>
+      <button type="button" class="btn btn-outline-danger" @click.prevent.self="doDelete($event)" :disabled=" !!delEmpId == false ">刪除員工資料(DELETE)</button>
     </div>
-    <input type="text" class="form-control" placeholder="請輸入id">
+    <input type="text" class="form-control" placeholder="請輸入id" v-model="delEmpId">
   </div>
-
 
   <hr>
   <!-- 查詢區 -->
   <button type="button" class="btn btn-success margin-around" v-on:click="doFetchEmpData()">查詢員工資料(GET)</button>
+  <button type="button" class="btn btn-secondary margin-around" @click.prevent="doClearEmpData()">清除員工資料</button>
   <table class="table table-hover" :class="{ 'myTableStyle' : true }" border="3">
     <thead>
-      <tr class="table-info">
+      <tr class="table-info" style="border-bottom: 3px solid black;">
         <th scope="col">#</th>
         <th scope="col">id</th>
         <th scope="col">empName</th>

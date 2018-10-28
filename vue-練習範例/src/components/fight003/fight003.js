@@ -42,6 +42,14 @@ export default {
         console.log('~~finally~~');
       });
     },
+    doFetchEmpDataById(_id) {
+      console.log(`%c=============== doFetchEmpDataById() ================`, 'background: blue');
+      const jsonServerUrl = `http://localhost:3000/emps/${_id}`;
+      fetchAsync(jsonServerUrl).then((cbData) => {
+        // console.log('cbData >>> ', cbData);
+        this.empModData = Object.assign({}, cbData);// JS object clone (ref. http://larry850806.github.io/2016/09/20/shallow-vs-deep-copy/)
+      });
+    },
     doClearEmpData: function () {
       console.log(`%c ================= doClearEmpData() ==================`, 'color:brown');
       this.empData = {}; // 清空資料
@@ -109,7 +117,7 @@ export default {
   }
 }
 
-// 使用async
+// 使用 async/await
 const patchData = async (_toUrl, _jsonData) => {
 
   console.log('%c================== patchData ==================', 'background:red');
@@ -132,5 +140,23 @@ const patchData = async (_toUrl, _jsonData) => {
   // only proceed once promise is resolved
   let cbData = await response.json();
   // only proceed once second promise is resolved
+  return cbData;
+};
+
+// 使用 async/await
+// 簡潔寫法 ref. https://gist.github.com/msmfsd/fca50ab095b795eb39739e8c4357a808
+// 錯誤處理：https://stackoverflow.com/questions/51781137/how-can-i-handle-error-404-in-async-await-fetch-api
+const fetchAsync = async (_toUrl) => {
+  let cbData = undefined;
+  try {
+    let response = await (await fetch(_toUrl));
+    // console.log(`result.status = `, result.status);
+    if (!response.ok) {
+      throw new Error(response.statusText)
+    };
+    cbData = response.json();
+  } catch (e) {
+    console.error('%c error: %s', 'color:red', e);
+  }
   return cbData;
 };

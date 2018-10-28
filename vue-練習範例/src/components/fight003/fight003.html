@@ -30,11 +30,12 @@
   <hr>
 
   <!-- 修改區 -->
+  <h2 :class="{ 'error' : true }" v-if="Object.keys(empModData).length === 0">查無此員工！</h2>
   <div class="input-group mb-3" v-bind:class="{ 'margin-around': true }" :style="{ width : '35%' }">
     <div class="input-group-prepend">
       <span class="input-group-text" :style="{ 'background' : 'pink' }" id="basic-addon1">id</span>
     </div>
-    <input type="text" class="form-control" placeholder="輸入員工id" v-model="empModData.id"><!-- 雙向綁定 -->
+    <input type="text" class="form-control" placeholder="輸入員工id" v-model="empModData.id" @keyup="doFetchEmpDataById( empModData.id )"><!-- 雙向綁定 -->
   </div>
 
   <div class="input-group mb-3" v-bind:class="{ 'margin-around': true }" :style="{ width : '100%' }">

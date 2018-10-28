@@ -5,6 +5,10 @@
   <hr>
   <b>請輸入您最愛的遊戲名稱：<input type="text" id="" v-model="myFavoriteGame.name"></b>
 
+  <br>
+
+  <b>請輸入您最愛的遊戲名稱(<span style="color:red">v-model.trim</span>)：<input type="text" id="" v-model.trim="myFavoriteGame.name"></b>
+
   <br><br><br>
   <h3>雙向綁定回template中 ： {{ myFavoriteGame.name }}</h3>
 

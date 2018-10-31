@@ -1,0 +1,16 @@
+<section class="test-015">
+  <h1 class="title-font-style">test-015 Component (父組件)</h1>
+
+  <div class="input-group mb-3" style="width: 500px;">
+    <div class="input-group-prepend">
+      <span class="input-group-text">@父要傳給子層的資料</span>
+    </div>
+    <input type="text" class="form-control color-father" placeholder="輸入父元件的值..." v-model="dirtyWord">
+  </div>
+
+  <!-- 子組件 -->
+  <!-- <test015-child-comp v-bind:fromFatherDirtyWord="dirtyWord"/> -->
+  <!-- <test015-child-comp :fromFatherDirtyWord="dirtyWord" @myTextChange="fatherChangeHandler"/>綁定自訂事件，也可不用寫 ($event) -->
+  <test015-child-comp :fromFatherDirtyWord="dirtyWord" @myTextChange="fatherChangeHandler($event)"/>
+
+</section>

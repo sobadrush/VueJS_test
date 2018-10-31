@@ -1,0 +1,15 @@
+<section class="test-015-child myScssTest">
+  <h1>test-015-child Component (子組件)</h1>
+
+  <!-- 子街收到來自父的資料：<h2 :style="{ 'color' : 'green' , 'font-weight': 'bolder' }">{{fromFatherDirtyWord}}</h2> -->
+  子街收到來自父的資料：<h2 :style="[ true ? {'color' : 'green'} : {'color' : 'purple'}]">{{fromFatherDirtyWord}}</h2>
+
+  <div class="input-group mb-3" style="width: 500px; margin: 0 auto;">
+    <!-- <input type="text" class="form-control" placeholder="子元件中修改父層的資料..." v-model="fromFatherDirtyWord"> -->
+    <input type="text" class="form-control color-child" placeholder="子元件中修改父層的資料..." v-model="inputText"><!-- 改綁定到computed的值，才不會error -->
+    <div class="input-group-append">
+      <span class="input-group-text">子要傳給父的資料</span>
+    </div>
+  </div>
+
+</section>

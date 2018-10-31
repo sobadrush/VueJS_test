@@ -89,6 +89,10 @@
                   <a href="javascript:void(0)">vue - 自訂 Directive</a>
                 </router-link>
 
+                <!-- (1)直接用 router-link Render出 li + <a>  (2) 用 :to -->
+                <router-link :to="{ path : `/practice/test015` }" tag="li">
+                  <a href="javascript:void(0)">vue - 子傳父(使用sync)</a>
+                </router-link>
             </ul>
         </li>
 

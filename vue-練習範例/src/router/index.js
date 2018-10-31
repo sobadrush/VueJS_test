@@ -18,6 +18,7 @@ import test_012Comp from '@/components/test_012/test_012.vue';
 import test_013Comp from '@/components/test_013/test_013.vue';
 import test_014Comp from '@/components/test_014/test_014.vue';
 import test_015Comp from '@/components/test_015/test_015.vue';
+import test_016Comp from '@/components/test_016/test_016.vue';
 import practice2Comp from '@/components/practice2/practice2.vue';
 import practice3Comp from '@/components/practice3/practice3.vue';
 import fetchDataByJqueryAjaxComp from '@/components/fetchDataByJqueryAjax/fetchDataByJqueryAjax.vue';
@@ -74,7 +75,8 @@ const router = new Router({
         { path: 'test012', name : 'test012Fuck' , component: test_012Comp } ,
         { path: 'test013', name : 'test013Fuck' , component: test_013Comp } ,
         { path: 'test014', name : 'test014Fuck' , component: test_014Comp } , // 自訂 Directive
-        { path: 'test015', name : 'test015Fuck' , component: test_015Comp } , // 子傳父(使用sync)
+        { path: 'test015', name : 'test015Fuck' , component: test_015Comp } , // 子傳父(子修改父的屬性)
+        { path: 'test016', name : 'test016Fuck' , component: test_016Comp } , // 具條件式的 style 綁定
       ]
     },
     {

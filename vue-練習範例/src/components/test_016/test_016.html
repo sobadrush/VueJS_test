@@ -1,0 +1,12 @@
+<section class="test-016">
+  <h1 class="title-font-style">test-016 Component - 條件式控制style綁定</h1>
+
+  <pre>{{ empData }}</pre>
+
+  <button type="button" class="btn margin-around" :class="{ 'btn-primary' : myFlag , 'btn-success' : !myFlag }" @click="doClick()">切換Flag ( {{ myFlag }} )</button>
+
+  <h2 :style="[ myFlag ? {'color' : 'green'} : {'color' : 'purple'}]"> empData.empName = <span style="color:red">{{ empData.empName }}</span> </h2>
+
+  <p>參考：https://stackoverflow.com/questions/48455909/condition-in-v-bindstyle-vuejs</p>
+
+</section>

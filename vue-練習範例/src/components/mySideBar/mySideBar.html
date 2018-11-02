@@ -60,6 +60,11 @@
                   <a href="javascript:void(0)">vue - 子傳父(子改父的屬性)</a>
                 </router-link>
 
+                <!-- (1)直接用 router-link Render出 li + <a>  (2) 用 :to -->
+                <router-link :to="{ name : `test017Fuck` }" tag="li">
+                  <a href="javascript:void(0)">vue - 子傳父(子改父的屬性 sync)</a>
+                </router-link>
+
                 <li>
                     <!-- 直接用命名路由指定 -->
                     <router-link :to="{ name : 'test007Fuck' }" tag="a">

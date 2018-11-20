@@ -41,8 +41,10 @@
     <script>
         var $myApp = new Vue({
             el: '#myApp',
-            data: {
-                isActive: true
+			data() {
+				return {
+					isActive: true
+				}                
             },
             methods: {
                 doClick: function () {
